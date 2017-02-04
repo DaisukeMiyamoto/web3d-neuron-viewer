@@ -10,32 +10,30 @@ if (isset($_GET['name'])) {
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <!-- Bootstrap -->
-    <link href="/tools/css/bootstrap.min.css" rel="stylesheet">
-
     <title>x3d neuron viewer</title>
     <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script>
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <!-- Bootstrap -->
+    <link href="/tools/css/bootstrap.min.css" rel="stylesheet">
+    <link href="/css/jquery-ui.css" rel="stylesheet">
     <style>
         body {
             padding-top: 70px;
         }
 
         x3d {
-            border: 2px solid darkorange;
-            #background: #000;
-            width: 90%;
-            height: 80%;
+            border: none;
+            width: 100%;
+            height: 70%;
         }
 
-        body {
+        .panel-x3d {
+            background-color: #181818;
         }
 
-        .starter-template {
-            padding: 40px 15px;
-            text-align: center;
+        .dropdown {
+            margin-bottom: 20px;
         }
-
     </style>
 </head>
 <body>
@@ -63,7 +61,6 @@ if (isset($_GET['name'])) {
 </nav>
 
 <div class="container">
-    <h1>3D Viewer</h1>
     <div class="dropdown">
         <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
                 aria-haspopup="true" aria-expanded="true">
@@ -72,27 +69,80 @@ if (isset($_GET['name'])) {
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li><a href="./?name=standardbrain_decimate">Standard Brain Decimated</a></li>
+            <li><a href="./?name=standardbrain_decimate_trans">Standard Brain Transparent</a></li>
             <li><a href="./?name=standardbrain_full">Standard Brain Full</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./?name=Deer">Deer</a></li>
+            <li><a href="./?name=0005">Neuron 0005</a></li>
+            <li><a href="./?name=0696">Neuron 0696</a></li>
         </ul>
     </div>
 </div>
 
 <div class="container">
-    <x3d id="the_element" showStat="true">
-        <scene>
-            <viewpoint position="0.0 0.0 10.0" orientation="0.0 0.0 0.0"></viewpoint>
-            <Inline nameSpaceName="Deer" mapDEFToID="true" onclick='redNose();' url="<?php echo $filename ?>"/>
-            <Background skyColor="0.2 0.2 0.2 "/>
-
-        </scene>
-    </x3d>
+    <div class="panel panel-primary">
+        <div class="panel-heading">
+            3D Viewer <?php echo $filename ?>
+        </div>
+        <div class="panel-body panel-x3d">
+            <x3d id="the_element" showStat="true">
+                <scene>
+                    <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
+                    <Inline nameSpaceName="inline_model" mapDEFToID="true" onclick='redNose();'
+                            url="<?php echo $filename ?>"/>
+                    <Background skyColor="0.1 0.1 0.1"/>
+                </scene>
+            </x3d>
+        </div>
+        <div class="panel-footer">
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox"/> Standard Brain
+                </span>
+                <div id="sliderContainer">
+                    <ul>
+                        <li><label>Red</label>
+                            <div id="redSlider" class="slider"/>
+                        </li>
+                        <li><label>Green</label>
+                            <div id="greenSlider" class="slider"/>
+                        </li>
+                        <li><label>Blue</label>
+                            <div id="blueSlider" class="slider"/>
+                        </li>
+                        <li><label>Alpha</label>
+                            <div id="alphaSlider" class="slider"/>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
 </div>
 
 <!-- jQuery (necessary for Bootstrap's JavaScript plugins) -->
+<!--<script src="/js/jquery.min.js"></script>-->
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="/js/jquery-ui.min.js"></script>
 <!-- Include all compiled plugins (below), or include individual files as needed -->
 <script src="/tools/js/bootstrap.min.js"></script>
+
+<script type="text/javascript">
+    $(document).ready(function () {
+
+        // Create the sliders
+        $(".slider").slider({
+            min: 0, max: 1, step: 0.01, slide: function (e, ui) {
+                var newCol = $("#redSlider").slider('option', 'value') + " "
+                    + $("#greenSlider").slider('option', 'value') + " "
+                    + $("#blueSlider").slider('option', 'value');
+                var newTrans = $("#alphaSlider").slider('option', 'value')
+                $("Material").attr("diffuseColor", newCol);
+                $("Material").attr("transparency", newTrans);
+            }
+        });
+
+    });
+</script>
+
 </body>
 </html>
