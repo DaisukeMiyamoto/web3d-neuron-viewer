@@ -1,0 +1,35 @@
+<html>
+<head>
+    <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
+    <title>x3d neuron viewer</title>
+    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script>
+    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
+    <style>
+        body {
+            background-color: #222;
+            color: white;
+        }
+
+        x3d {
+            border: 2px solid darkorange;
+            #background: #000;
+            width: 100%;
+            height: 80%;
+        }
+    </style>
+</head>
+<body>
+<h1>Standard Brain</h1>
+<p>
+    <input type="checkbox" id="cbox_standardbrain" checked/> Standard Brain
+</p>
+<x3d id="the_element" showStat="true">
+    <scene>
+        <viewpoint position="0.0 0.0 10.0" orientation="0.0 0.0 0.0"></viewpoint>
+        <Inline nameSpaceName="Deer" mapDEFToID="true" onclick='redNose();' url="./data/standardbrain_2.x3d"/>
+        <Background skyColor="0.2 0.2 0.2 "/>
+
+    </scene>
+</x3d>
+</body>
+</html>
