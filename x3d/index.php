@@ -130,15 +130,17 @@ $neuron_list = array(
                 </scene>
             </x3d>
         </div>
-        <div class="panel-footer">
-            <div class="input-group">
-                <?php
-                foreach($neuron_list as $id => $target) {
-                    echo '<span class="input-group-addon">';
-                    echo '<input type="checkbox" id="' . $target . '" class="cb_inline"/>' . $target;
-                    echo "</span>";
-                }
-                ?>
+        <div class="panel-footer container-fluid">
+            <div class="row">
+                <div class="input-group">
+                    <?php
+                    foreach($neuron_list as $id => $target) {
+                        echo '<span class="input-group-addon col-sm-2">';
+                        echo '<input type="checkbox" id="' . $target . '" class="cb_inline"/>' . $target;
+                        echo "</span>";
+                    }
+                    ?>
+                </div>
             </div>
         </div>
         <div class="panel-footer" id="log">
