@@ -3,7 +3,7 @@
   <component name="WebServers">
     <option name="servers">
       <webServer id="ea3e36d4-8c27-4271-bc8a-74f593e192c0" name="bond" url="http://192.168.0.249">
-        <fileTransfer host="192.168.0.249" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" accessType="SFTP" keyPair="true">
+        <fileTransfer host="192.168.0.249" port="22" privateKey="C:\cygwin64\home\nebula\.ssh\id_rsa" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
