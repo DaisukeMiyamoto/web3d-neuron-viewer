@@ -85,15 +85,10 @@ if (isset($_GET['name'])) {
             3D Viewer <?php echo $filename ?>
         </div>
         <div class="panel-body panel-x3d">
-            <x3d id="the_element" showStat="true" showLog="true">
-                <scene>
+            <x3d id="x3d_element" showStat="true" showLog="true">
+                <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
                     <Inline nameSpaceName="inline_model" mapDEFToID="true" url="<?php echo $filename ?>"/>
-	            <!--
-                    <Inline nameSpaceName="inline_model3" mapDEFToID="true" url="data/mb_aopt.x3d"/>
-                    <Inline nameSpaceName="inline_model" mapDEFToID="true" url="data/al_aopt.x3d"/>
-                    <Inline nameSpaceName="inline_model2" mapDEFToID="true" url="data/standardbrain_aopt.x3d"/>
--->
                     <Background skyColor="0.1 0.1 0.1"/>
                 </scene>
             </x3d>
@@ -101,7 +96,7 @@ if (isset($_GET['name'])) {
         <div class="panel-footer">
             <div class="input-group">
                 <span class="input-group-addon">
-                    <input type="checkbox"/> Standard Brain
+                    <input type="checkbox" id="cb_standardbrain"/> Standard Brain
                 </span>
                 <div id="sliderContainer">
                     <ul>
@@ -119,7 +114,13 @@ if (isset($_GET['name'])) {
                         </li>
                     </ul>
                 </div>
+                <div>
+
+                </div>
             </div>
+        </div>
+        <div class="panel-footer" id="log">
+            log:
         </div>
     </div>
 </div>
@@ -141,6 +142,16 @@ if (isset($_GET['name'])) {
         });
 
     });
+
+    $('#cb_standardbrain').change(function(){
+        if($(this).is(':checked')) {
+            $('#x3d_scene').append('<Inline id="inline_cube" nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d" />');
+        }else{
+//            $('#inline_cube').attr('render', false)
+            $('#inline_cube').remove();
+        }
+    });
+
 </script>
 
 </body>
