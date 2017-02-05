@@ -1,0 +1,79 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.75 0.75' headlight='false' type='"EXAMINE" "ANY"'/>
+    <Background DEF='WO_World' groundColor='0.051 0.051 0.051' skyColor='0.051 0.051 0.051'/>
+    <Transform DEF='BezierCircle_001_TRANSFORM' rotation='-0 0.707107 0.707107 3.14159' scale='-22.0686 -22.0686 -22.0686' translation='0 -2.68089 0'/>
+    <Transform DEF='Point_TRANSFORM' rotation='-0 0.707107 0.707107 3.14159' scale='-1 -1 -1' translation='12.9516 -2.68089 -17.8252'>
+      <PointLight DEF='LA_Point' radius='25'/>
+    </Transform>
+    <Transform DEF='BezierCircle_TRANSFORM' rotation='0 0.707107 0.707107 3.14159' scale='15.2984 15.2984 15.2984'/>
+    <Transform DEF='Camera_TRANSFORM' rotation='0 1 0 3.14159' translation='0 0 -15.2984'>
+      <Viewpoint DEF='CA_Camera' position='0 0 0' fieldOfView='0.858'/>
+    </Transform>
+    <Transform DEF='Lamp_TRANSFORM' rotation='-0.498084 -0.762016 -0.413815 1.51388' translation='-4.07624 10.6551 6.00545'>
+      <PointLight DEF='LA_Lamp' radius='30'/>
+    </Transform>
+    <Transform DEF='StandardBrain_TRANSFORM' rotation='0 0 1 3.14159' scale='0.01 0.01 0.01' translation='5.12 4.5 -1.6'>
+      <Transform DEF='StandardBrain_ifs_TRANSFORM' translation='-3.6e-005 -2.1e-005 3e-006'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet'>
+          <Shape DEF='SP_2'>
+            <Appearance>
+              <Material DEF='MA_Material' ambientIntensity='0.333' shininess='0.098' specularColor='0.401 0.401 0.401' transparency='0.85'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_2' vertexCount='94037 6243' primType='"TRIANGLESTRIP" "TRIANGLES"' position='505.939300537 449.135986328 147.986358643' size='1001.60137939 665.74597168 285.655273438' index='bingeo/BG_2_indexBinary.bin' coord='bingeo/BG_2_coordBinary.bin' normal='bingeo/BG_2_normalBinary.bin'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+    <Transform DEF='LALVPC_TRANSFORM' rotation='0 -0 1 3.14159' scale='0.01 0.01 0.01' translation='5.12 4.5 -1.6'>
+      <Transform DEF='LALVPC_ifs_TRANSFORM' translation='-4.5e-005 -4e-006 1.1e-005'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet_003'>
+          <Shape DEF='SP_1'>
+            <Appearance>
+              <Material DEF='MA_Material_003' ambientIntensity='0.333' diffuseColor='0.058 0.373 0.8' shininess='0.098' specularColor='0.401 0.401 0.401'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_1' vertexCount='27263 1278' primType='"TRIANGLESTRIP" "TRIANGLES"' position='510.986022949 405.828979492 172.896499634' size='469.802032471 138.933990479 55.5010070801' index='bingeo/BG_1_indexBinary.bin' coord='bingeo/BG_1_coordBinary.bin' normal='bingeo/BG_1_normalBinary.bin'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+    <Transform DEF='CB_TRANSFORM' rotation='0 -0 1 3.14159' scale='0.01 0.01 0.01' translation='5.12 4.5 -1.6'>
+      <Transform DEF='CB_ifs_TRANSFORM' translation='-4.5e-005 -4e-006 1.1e-005'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet_004'>
+          <Shape DEF='SP_0'>
+            <Appearance>
+              <Material DEF='MA_Material_004' ambientIntensity='0.333' diffuseColor='0.8 0.49 0.023' shininess='0.098' specularColor='0.401 0.401 0.401'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_0' vertexCount='9929 507' primType='"TRIANGLESTRIP" "TRIANGLES"' position='506.170013428 358.131011963 132.132003784' size='152.668029785 76.4219970703 29.7120056152' index='bingeo/BG_0_indexBinary.bin' coord='bingeo/BG_0_coordBinary.bin' normal='bingeo/BG_0_normalBinary.bin'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+    <Transform DEF='AL_TRANSFORM' rotation='0 -0 1 3.14159' scale='0.01 0.01 0.01' translation='5.12 4.5 -1.4'>
+      <Transform DEF='AL_ifs_TRANSFORM' translation='-3.9e-005 -6e-006 -4e-006'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet_005'>
+          <Shape DEF='SP_4'>
+            <Appearance>
+              <Material DEF='MA_Material_005' ambientIntensity='0.333' diffuseColor='0.8 0.091 0.012' shininess='0.098' specularColor='0.401 0.401 0.401'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_4' vertexCount='83114 3597' primType='"TRIANGLESTRIP" "TRIANGLES"' position='510.999023438 403.415222168 61.9754905701' size='740.228210449 238.506011963 109.715118408' index='bingeo/BG_4_indexBinary.bin' coord='bingeo/BG_4_coordBinary.bin' normal='bingeo/BG_4_normalBinary.bin'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+    <Transform DEF='MB_TRANSFORM' rotation='0 -0 1 3.14159' scale='0.01 0.01 0.01' translation='5.12 4.5 -1.6'>
+      <Transform DEF='MB_ifs_TRANSFORM' translation='-4.5e-005 -4e-006 1.1e-005'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet_001'>
+          <Shape DEF='SP_3'>
+            <Appearance>
+              <Material DEF='MA_Material_002' ambientIntensity='0.333' diffuseColor='0.004 0.8 0.105' shininess='0.098' specularColor='0.401 0.401 0.401'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_3' vertexCount='57446 3756' primType='"TRIANGLESTRIP" "TRIANGLES"' position='510.986968994 296.869354248 160.021881104' size='559.701904297 189.566101074 161.404724121' index='bingeo/BG_3_indexBinary.bin' coord='bingeo/BG_3_coordBinary.bin' normal='bingeo/BG_3_normalBinary.bin'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+  </Scene>
+</X3D>
