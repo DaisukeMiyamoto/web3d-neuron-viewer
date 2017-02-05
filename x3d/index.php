@@ -34,6 +34,11 @@ if (isset($_GET['name'])) {
         .dropdown {
             margin-bottom: 20px;
         }
+        #log {
+            background-color: #000;
+            color: #fff;
+        }
+
     </style>
 </head>
 <body>
@@ -98,29 +103,35 @@ if (isset($_GET['name'])) {
                 <span class="input-group-addon">
                     <input type="checkbox" id="cb_standardbrain"/> Standard Brain
                 </span>
-                <div id="sliderContainer">
-                    <ul>
-                        <li><label>Red</label>
-                            <div id="redSlider" class="slider"/>
-                        </li>
-                        <li><label>Green</label>
-                            <div id="greenSlider" class="slider"/>
-                        </li>
-                        <li><label>Blue</label>
-                            <div id="blueSlider" class="slider"/>
-                        </li>
-                        <li><label>Alpha</label>
-                            <div id="alphaSlider" class="slider"/>
-                        </li>
-                    </ul>
-                </div>
-                <div>
-
-                </div>
+            </div>
+            <div class="input-group">
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0004" class="cb_inline" /> 0004
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0005" class="cb_inline" /> 0005
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0008" class="cb_inline" /> 0008
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0009" class="cb_inline" /> 0009
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0012" class="cb_inline" /> 0012
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0017" class="cb_inline" /> 0017
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0019" class="cb_inline" /> 0019
+                </span>
+                <span class="input-group-addon">
+                    <input type="checkbox" id="0021" class="cb_inline" /> 0021
+                </span>
             </div>
         </div>
         <div class="panel-footer" id="log">
-            log:
         </div>
     </div>
 </div>
@@ -147,10 +158,20 @@ if (isset($_GET['name'])) {
         if($(this).is(':checked')) {
             $('#x3d_scene').append('<Inline id="inline_cube" nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d" />');
         }else{
-//            $('#inline_cube').attr('render', false)
             $('#inline_cube').remove();
         }
     });
+
+    $('.cb_inline').change(function(){
+        if($(this).is(':checked')) {
+            $('#log').append('Append: ' + this.id + '<br />\n')
+            $('#x3d_scene').append('<Inline id="inline_' + this.id + '" nameSpaceName="' + this.id + '" mapDEFToID="true" url="data/' + this.id + '_regist.x3d" />');
+        }else{
+            $('#log').append('Remove: ' + this.id + '<br />\n')
+            $('#inline_' + this.id).remove();
+        }
+    });
+
 
 </script>
 
