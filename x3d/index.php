@@ -46,6 +46,7 @@ $neuron_list = array(
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
     <!-- Bootstrap -->
     <link href="/tools/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='./switch.css'/>
     <link href="/css/jquery-ui.css" rel="stylesheet">
     <style>
         body {
@@ -69,6 +70,9 @@ $neuron_list = array(
         #log {
             background-color: #000;
             color: #fff;
+            height: 60px;
+            overflow-y: scroll;
+            display: none;
         }
 
     </style>
@@ -111,7 +115,7 @@ $neuron_list = array(
             <li><a href="./?name=standardbrain_aopt">Standard Brain AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./?name=0004_regist_aopt">Neuron 0004</a></li>
-            <li><a href="./?name=0696_regist_aopt">Neuron 0696</a></li>
+            <li><a href="./?name=1080_regist_aopt">Neuron 1080</a></li>
         </ul>
     </div>
 </div>
@@ -122,7 +126,8 @@ $neuron_list = array(
             3D Viewer <?php echo $filename ?>
         </div>
         <div class="panel-body panel-x3d">
-            <x3d id="x3d_element" showStat="true" showLog="true">
+<!--            <x3d id="x3d_element" showStat="true" showLog="true">-->
+            <x3d id="x3d_element" showStat="true">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
                     <Inline nameSpaceName="inline_model" mapDEFToID="true" url="<?php echo $filename ?>"/>
@@ -130,16 +135,25 @@ $neuron_list = array(
                 </scene>
             </x3d>
         </div>
-        <div class="panel-footer container-fluid">
-            <div class="row">
-                <div class="input-group">
-                    <?php
-                    foreach($neuron_list as $id => $target) {
-                        echo '<span class="input-group-addon col-sm-2">';
-                        echo '<input type="checkbox" id="' . $target . '" class="cb_inline"/>' . $target;
-                        echo "</span>";
-                    }
-                    ?>
+        <div class="panel-footer">
+            <div class="container-fluid">
+                <div class="row">
+<!--                    <div class="material-switch pull-right">-->
+<!--                        <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>-->
+<!--                        <label for="someSwitchOptionDefault" class="label-default"></label>-->
+<!--                    </div>-->
+                    <ul class="list-group">
+                        <?php
+                        foreach($neuron_list as $id => $target) {
+                            echo '<span><li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">' . $target;
+                            echo '<div class="material-switch pull-right">';
+                            echo '<input type="checkbox" id="' . $target . '" class="cb_inline"/>';
+                            echo '<label for="' . $target . '" class="label-primary"></label>';
+                            echo "</div>";
+                            echo '</li></span>';
+                        }
+                        ?>
+                    </ul>
                 </div>
             </div>
         </div>
@@ -166,20 +180,12 @@ $neuron_list = array(
 
     });
 
-    $('#cb_standardbrain').change(function () {
-        if ($(this).is(':checked')) {
-            $('#x3d_scene').append('<Inline id="inline_cube" nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d" />');
-        } else {
-            $('#inline_cube').remove();
-        }
-    });
-
-    $('.cb_inline').change(function () {
-        if ($(this).is(':checked')) {
-            $('#log').append('Append: ' + this.id + '<br />\n')
+    $('.cb_inline').click(function () {
+        if ($(this).is(":checked")) {
+            $('#log').append('Append: ' + this.id + '<br />\n');
             $('#x3d_scene').append('<Inline id="inline_' + this.id + '" nameSpaceName="' + this.id + '" mapDEFToID="true" url="data/' + this.id + '_regist_aopt.x3d" />');
         } else {
-            $('#log').append('Remove: ' + this.id + '<br />\n')
+            $('#log').append('Remove: ' + this.id + '<br />\n');
             $('#inline_' + this.id).remove();
         }
     });
