@@ -4,6 +4,37 @@ if (isset($_GET['name'])) {
 } else {
     $filename = './data/standardbrain_decimate.x3d';
 }
+
+$neuron_list = array(
+    '0004',
+    '0005',
+    '0008',
+    '0009',
+    '0012',
+    '0017',
+    '0019',
+    '0021',
+    '0655',
+    '0661',
+    '0663',
+    '0664',
+    '0965',
+    '0966',
+    '0967',
+    '0969',
+    '0970',
+    '0973',
+    '0984',
+    '0986',
+    '0988',
+    '0993',
+    '1009',
+    '1020',
+    '1068',
+    '1080',
+);
+
+
 ?>
 <html>
 <head>
@@ -15,6 +46,7 @@ if (isset($_GET['name'])) {
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
     <!-- Bootstrap -->
     <link href="/tools/css/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='./switch.css'/>
     <link href="/css/jquery-ui.css" rel="stylesheet">
     <style>
         body {
@@ -34,9 +66,13 @@ if (isset($_GET['name'])) {
         .dropdown {
             margin-bottom: 20px;
         }
+
         #log {
             background-color: #000;
             color: #fff;
+            height: 60px;
+            overflow-y: scroll;
+            display: none;
         }
 
     </style>
@@ -78,8 +114,8 @@ if (isset($_GET['name'])) {
             <li><a href="./?name=standardbrain_full">Standard Brain Full</a></li>
             <li><a href="./?name=standardbrain_aopt">Standard Brain AOPT</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./?name=0005">Neuron 0005</a></li>
-            <li><a href="./?name=0696">Neuron 0696</a></li>
+            <li><a href="./?name=0004_regist_aopt">Neuron 0004</a></li>
+            <li><a href="./?name=1080_regist_aopt">Neuron 1080</a></li>
         </ul>
     </div>
 </div>
@@ -90,7 +126,8 @@ if (isset($_GET['name'])) {
             3D Viewer <?php echo $filename ?>
         </div>
         <div class="panel-body panel-x3d">
-            <x3d id="x3d_element" showStat="true" showLog="true">
+<!--            <x3d id="x3d_element" showStat="true" showLog="true">-->
+            <x3d id="x3d_element" showStat="true">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
                     <Inline nameSpaceName="inline_model" mapDEFToID="true" url="<?php echo $filename ?>"/>
@@ -99,36 +136,25 @@ if (isset($_GET['name'])) {
             </x3d>
         </div>
         <div class="panel-footer">
-            <div class="input-group">
-                <span class="input-group-addon">
-                    <input type="checkbox" id="cb_standardbrain"/> Standard Brain
-                </span>
-            </div>
-            <div class="input-group">
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0004" class="cb_inline" /> 0004
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0005" class="cb_inline" /> 0005
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0008" class="cb_inline" /> 0008
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0009" class="cb_inline" /> 0009
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0012" class="cb_inline" /> 0012
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0017" class="cb_inline" /> 0017
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0019" class="cb_inline" /> 0019
-                </span>
-                <span class="input-group-addon">
-                    <input type="checkbox" id="0021" class="cb_inline" /> 0021
-                </span>
+            <div class="container-fluid">
+                <div class="row">
+<!--                    <div class="material-switch pull-right">-->
+<!--                        <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>-->
+<!--                        <label for="someSwitchOptionDefault" class="label-default"></label>-->
+<!--                    </div>-->
+                    <ul class="list-group">
+                        <?php
+                        foreach($neuron_list as $id => $target) {
+                            echo '<span><li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">' . $target;
+                            echo '<div class="material-switch pull-right">';
+                            echo '<input type="checkbox" id="' . $target . '" class="cb_inline"/>';
+                            echo '<label for="' . $target . '" class="label-primary"></label>';
+                            echo "</div>";
+                            echo '</li></span>';
+                        }
+                        ?>
+                    </ul>
+                </div>
             </div>
         </div>
         <div class="panel-footer" id="log">
@@ -154,20 +180,12 @@ if (isset($_GET['name'])) {
 
     });
 
-    $('#cb_standardbrain').change(function(){
-        if($(this).is(':checked')) {
-            $('#x3d_scene').append('<Inline id="inline_cube" nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d" />');
-        }else{
-            $('#inline_cube').remove();
-        }
-    });
-
-    $('.cb_inline').change(function(){
-        if($(this).is(':checked')) {
-            $('#log').append('Append: ' + this.id + '<br />\n')
-            $('#x3d_scene').append('<Inline id="inline_' + this.id + '" nameSpaceName="' + this.id + '" mapDEFToID="true" url="data/' + this.id + '_regist.x3d" />');
-        }else{
-            $('#log').append('Remove: ' + this.id + '<br />\n')
+    $('.cb_inline').click(function () {
+        if ($(this).is(":checked")) {
+            $('#log').append('Append: ' + this.id + '<br />\n');
+            $('#x3d_scene').append('<Inline id="inline_' + this.id + '" nameSpaceName="' + this.id + '" mapDEFToID="true" url="data/' + this.id + '_regist_aopt.x3d" />');
+        } else {
+            $('#log').append('Remove: ' + this.id + '<br />\n');
             $('#inline_' + this.id).remove();
         }
     });
