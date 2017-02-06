@@ -1,7 +1,8 @@
 # test_x3dom
 testing visualization of neurons and brain by using x3dom
 
-Launched by [CNSPF](https://cns.neuroinf.jp) : https://cns.neuroinf.jp/modules/pico/index.php?content_id=11
+## Examples
+- [CNSPF](https://cns.neuroinf.jp) : https://cns.neuroinf.jp/modules/pico/index.php?content_id=11
 
 ## Screenshot
 
