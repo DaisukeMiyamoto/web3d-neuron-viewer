@@ -89,13 +89,20 @@ require(INC_BASE. "/menu.php");
             <x3d id="x3d_element" showStat="true">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
-                    <Inline nameSpaceName="inline_model" mapDEFToID="true" url="<?php echo $filename ?>"/>
+                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"/>
                     <Background skyColor="0.1 0.1 0.1"/>
                 </scene>
             </x3d>
         </div>
         <div class="panel-footer">
             <div class="container-fluid">
+                <div class="row">
+                    <ul class="list-group">
+                        <span>
+                            <li class="list-group-item col-6"><label>Standard Brain Transparency</label> <div id="transSlider" class="slider"/></li>
+                        </span>
+                    </ul>
+                </div>
                 <div class="row">
                     <ul class="list-group">
                         <?php
@@ -122,6 +129,20 @@ require(INC_BASE. "/menu.php");
 <script src="<?php echo URL_BASE; ?>/lib/bootstrap.min.js"></script>
 
 <script type="text/javascript">
+    $(document).ready(function () {
+        $(".slider").slider({
+            min: 0, max: 1, step: 0.1, slide: function(e, ui) {
+                var newTrans = $("#transSlider").slider('option', 'value');
+                $("#SB__MA_Material").attr("transparency", newTrans);
+                $("#SB__MA_Material_001").attr("transparency", newTrans);
+                $("#SB__MA_Material_002").attr("transparency", newTrans);
+                $("#SB__MA_Material_003").attr("transparency", newTrans);
+                $("#SB__MA_Material_004").attr("transparency", newTrans);
+                $("#SB__MA_Material_005").attr("transparency", newTrans);
+            }
+        });
+    });
+
     $('.cb_inline').click(function () {
         if ($(this).is(":checked")) {
             $('#log').append('Append: ' + this.id + '<br />\n');
