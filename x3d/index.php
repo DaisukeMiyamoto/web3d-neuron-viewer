@@ -52,7 +52,6 @@ $neuron_list = array(
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
                     <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"/>
-                    <Background skyColor="0.1 0.1 0.1"/>
                 </scene>
             </x3d>
         </div>
@@ -61,10 +60,20 @@ $neuron_list = array(
                 <div class="row">
                     <ul class="list-group">
                         <span>
-                            <li class="list-group-item col-6"><label>Standard Brain Transparency (experimental)</label> <div id="transSlider" class="slider"/></li>
+                            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+                                Show Info
+                                <div class="material-switch pull-right">
+                                    <input type="checkbox" id="show_info" class="show_info" checked/>
+                                    <label for="show_info" class="label-info"></label>
+                                </div>
+                            </li>
                         </span>
                     </ul>
                 </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="container-fluid">
                 <div class="row">
                     <ul class="list-group">
                         <?php
@@ -77,6 +86,18 @@ $neuron_list = array(
                             echo '</li></span>';
                         }
                         ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="list-group">
+                        <li class="list-group-item col-6">
+                            <label>Standard Brain Transparency (experimental)</label>
+                            <div id="transSlider" class="slider"/>
+                        </li>
                     </ul>
                 </div>
             </div>
@@ -109,6 +130,15 @@ $neuron_list = array(
             $('#inline_' + this.id).remove();
         }
     });
+
+    $('#show_info').click(function () {
+        if ($(this).is(":checked")) {
+            $('#x3dom-state-viewer').css('display', 'block');
+        } else {
+            $('#x3dom-state-viewer').css('display', 'none');
+        }
+    });
+
 </script>
 
 </body>
