@@ -1,0 +1,25 @@
+body {
+    padding-top: 70px;
+}
+
+x3d {
+    border: none;
+    width: 100%;
+    height: 70%;
+}
+
+.panel-x3d {
+    background-color: #181818;
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+#log {
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    overflow-y: scroll;
+    display: none;
+}

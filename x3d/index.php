@@ -1,8 +1,12 @@
 <?php
+define("URL_BASE", "/x3d");
+define("INC_BASE", "./inc");
+define("DATA_DIR", "./data");
+
 if (isset($_GET['name'])) {
-    $filename = './data/' . htmlentities($_GET['name'], ENT_QUOTES) . '.x3d';
+    $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . ".x3d";
 } else {
-    $filename = './data/standardbrain_decimate.x3d';
+    $filename = DATA_DIR . "/" . "standardbrain_aopt.x3d";
 }
 
 $neuron_list = array(
@@ -41,65 +45,20 @@ $neuron_list = array(
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>x3d neuron viewer</title>
+    <title>CNS-PF 3D Viewer</title>
+    <!-- x3d -->
     <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script>
     <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
     <!-- Bootstrap -->
-    <link href="/tools/css/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' href='./switch.css'/>
-    <link href="/css/jquery-ui.css" rel="stylesheet">
-    <style>
-        body {
-            padding-top: 70px;
-        }
-
-        x3d {
-            border: none;
-            width: 100%;
-            height: 70%;
-        }
-
-        .panel-x3d {
-            background-color: #181818;
-        }
-
-        .dropdown {
-            margin-bottom: 20px;
-        }
-
-        #log {
-            background-color: #000;
-            color: #fff;
-            height: 60px;
-            overflow-y: scroll;
-            display: none;
-        }
-
-    </style>
+    <link href="<?php echo URL_BASE; ?>/lib/bootstrap.min.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/lib/switch.css'/>
+    <link href="<?php echo URL_BASE; ?>/lib/jquery-ui.css" rel="stylesheet">
+    <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/my.css'/>
 </head>
 <body>
-<nav class="navbar navbar-inverse navbar-fixed-top">
-    <div class="container">
-        <div class="navbar-header">
-            <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar"
-                    aria-expanded="false" aria-controls="navbar">
-                <span class="sr-only">Toggle navigation</span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-                <span class="icon-bar"></span>
-            </button>
-            <a class="navbar-brand" href="#">Kanzaki-Takahashi Lab.</a>
-        </div>
-        <div id="navbar" class="collapse navbar-collapse">
-            <ul class="nav navbar-nav">
-                <li><a href="/tools">Home</a></li>
-                <li class="active"><a href="/tools">3D Viewer</a></li>
-                <li><a href="/tools/place.php">Place</a></li>
-                <li><a href="/tools/matlab.php">Matlab</a></li>
-            </ul>
-        </div><!--/.nav-collapse -->
-    </div>
-</nav>
+<?php
+require(INC_BASE. "/menu.php");
+?>
 
 <div class="container">
     <div class="dropdown">
@@ -138,10 +97,6 @@ $neuron_list = array(
         <div class="panel-footer">
             <div class="container-fluid">
                 <div class="row">
-<!--                    <div class="material-switch pull-right">-->
-<!--                        <input id="someSwitchOptionDefault" name="someSwitchOption001" type="checkbox"/>-->
-<!--                        <label for="someSwitchOptionDefault" class="label-default"></label>-->
-<!--                    </div>-->
                     <ul class="list-group">
                         <?php
                         foreach($neuron_list as $id => $target) {
@@ -163,23 +118,10 @@ $neuron_list = array(
 </div>
 
 <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="/js/jquery-ui.min.js"></script>
-<!-- Include all compiled plugins (below), or include individual files as needed -->
-<script src="/tools/js/bootstrap.min.js"></script>
+<script src="<?php echo URL_BASE; ?>/lib/jquery-ui.min.js"></script>
+<script src="<?php echo URL_BASE; ?>/lib/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    $(document).ready(function () {
-
-        // Create the sliders
-        $(".slider").slider({
-            min: 0, max: 1, step: 0.01, slide: function (e, ui) {
-                var newTrans = $("#alphaSlider").slider('option', 'value')
-                $("Material", "#inline_model__StandardBrain_ifs_TRANSFORM").attr("transparency", newTrans);
-            }
-        });
-
-    });
-
     $('.cb_inline').click(function () {
         if ($(this).is(":checked")) {
             $('#log').append('Append: ' + this.id + '<br />\n');
@@ -189,8 +131,6 @@ $neuron_list = array(
             $('#inline_' + this.id).remove();
         }
     });
-
-
 </script>
 
 </body>
