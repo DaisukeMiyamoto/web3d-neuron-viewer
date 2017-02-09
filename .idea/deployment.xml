@@ -9,6 +9,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="cnspf">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/data/www/x3d" local="$PROJECT_DIR$/x3d" web="/x3d" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
   </component>
 </project>

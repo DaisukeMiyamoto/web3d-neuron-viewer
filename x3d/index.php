@@ -3,12 +3,7 @@ define("URL_BASE", "/x3d");
 define("INC_BASE", "./inc");
 define("DATA_DIR", "./data");
 
-if (isset($_GET['name'])) {
-    $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . ".x3d";
-} else {
-    $filename = DATA_DIR . "/" . "standardbrain_aopt.x3d";
-}
-
+$filename = DATA_DIR . "/" . "standardbrain_decimate_trans.x3d";
 $neuron_list = array(
     '0004',
     '0005',
@@ -42,50 +37,17 @@ $neuron_list = array(
 ?>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1">
-    <title>CNS-PF 3D Viewer</title>
-    <!-- x3d -->
-    <script type='text/javascript' src='https://www.x3dom.org/download/x3dom.js'></script>
-    <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/download/x3dom.css'/>
-    <!-- Bootstrap -->
-    <link href="<?php echo URL_BASE; ?>/lib/bootstrap.min.css" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/lib/switch.css'/>
-    <link href="<?php echo URL_BASE; ?>/lib/jquery-ui.css" rel="stylesheet">
-    <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/my.css'/>
+<?php require(INC_BASE. "/header.php"); ?>
 </head>
 <body>
-<?php
-require(INC_BASE. "/menu.php");
-?>
-
-<div class="container">
-    <div class="dropdown">
-        <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="true">
-            Choose Model
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="./?name=standardbrain_decimate">Standard Brain Decimated</a></li>
-            <li><a href="./?name=standardbrain_decimate_trans">Standard Brain Transparent</a></li>
-            <li><a href="./?name=standardbrain_full">Standard Brain Full</a></li>
-            <li><a href="./?name=standardbrain_aopt">Standard Brain AOPT</a></li>
-            <li role="separator" class="divider"></li>
-            <li><a href="./?name=0004_regist_aopt">Neuron 0004</a></li>
-            <li><a href="./?name=1080_regist_aopt">Neuron 1080</a></li>
-        </ul>
-    </div>
-</div>
+<?php require(INC_BASE. "/menu.php"); ?>
 
 <div class="container">
     <div class="panel panel-primary">
         <div class="panel-heading">
-            3D Viewer <?php echo $filename ?>
+            3D Viewer [<?php echo $filename ?>]
         </div>
         <div class="panel-body panel-x3d">
-<!--            <x3d id="x3d_element" showStat="true" showLog="true">-->
             <x3d id="x3d_element" showStat="true">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
@@ -99,7 +61,7 @@ require(INC_BASE. "/menu.php");
                 <div class="row">
                     <ul class="list-group">
                         <span>
-                            <li class="list-group-item col-6"><label>Standard Brain Transparency</label> <div id="transSlider" class="slider"/></li>
+                            <li class="list-group-item col-6"><label>Standard Brain Transparency (experimental)</label> <div id="transSlider" class="slider"/></li>
                         </span>
                     </ul>
                 </div>
@@ -134,11 +96,6 @@ require(INC_BASE. "/menu.php");
             min: 0, max: 1, step: 0.1, slide: function(e, ui) {
                 var newTrans = $("#transSlider").slider('option', 'value');
                 $("#SB__MA_Material").attr("transparency", newTrans);
-                $("#SB__MA_Material_001").attr("transparency", newTrans);
-                $("#SB__MA_Material_002").attr("transparency", newTrans);
-                $("#SB__MA_Material_003").attr("transparency", newTrans);
-                $("#SB__MA_Material_004").attr("transparency", newTrans);
-                $("#SB__MA_Material_005").attr("transparency", newTrans);
             }
         });
     });
