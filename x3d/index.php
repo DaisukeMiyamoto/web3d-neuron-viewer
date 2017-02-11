@@ -3,7 +3,7 @@ define("URL_BASE", "/x3d");
 define("INC_BASE", "./inc");
 define("DATA_DIR", "./data");
 
-$filename = DATA_DIR . "/" . "standardbrain_decimate_trans.x3d";
+$filename = DATA_DIR . "/" . "standardbrain_decimate_trans_aopt.x3d";
 $neuron_list = array(
     '0004',
     '0005',
@@ -51,7 +51,7 @@ $neuron_list = array(
             <x3d id="x3d_element" showStat="true">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
-                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"/>
+                    <Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="<?php echo $filename ?>"/>
                 </scene>
             </x3d>
         </div>
@@ -65,6 +65,15 @@ $neuron_list = array(
                                 <div class="material-switch pull-right">
                                     <input type="checkbox" id="show_info" class="show_info" checked/>
                                     <label for="show_info" class="label-info"></label>
+                                </div>
+                            </li>
+                        </span>
+                        <span>
+                            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+                                Coloring
+                                <div class="material-switch pull-right">
+                                    <input type="checkbox" id="cb_coloring" class="show_info"/>
+                                    <label for="cb_coloring" class="label-info"></label>
                                 </div>
                             </li>
                         </span>
@@ -116,7 +125,7 @@ $neuron_list = array(
         $(".slider").slider({
             min: 0, max: 1, step: 0.1, slide: function(e, ui) {
                 var newTrans = $("#transSlider").slider('option', 'value');
-                $("#SB__MA_Material").attr("transparency", newTrans);
+                $("#inline_SB__MA_Material").attr("transparency", newTrans);
             }
         });
     });
@@ -136,6 +145,15 @@ $neuron_list = array(
             $('#x3dom-state-viewer').css('display', 'block');
         } else {
             $('#x3dom-state-viewer').css('display', 'none');
+        }
+    });
+
+    $('#cb_coloring').click(function () {
+        $('#inline_SB').remove();
+        if ($(this).is(":checked")) {
+            $('#x3d_scene').append('<Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="data/standardbrain_aopt.x3d" />');
+        } else {
+            $('#x3d_scene').append('<Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="data/standardbrain_decimate_trans_aopt.x3d" />');
         }
     });
 
