@@ -3,7 +3,6 @@
 <X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
   <Scene>
     <NavigationInfo avatarSize='0.25 1.75 0.75' headlight='false' type='"EXAMINE" "ANY"'/>
-    <Background DEF='WO_World' groundColor='0.051 0.051 0.051' skyColor='0.051 0.051 0.051'/>
     <Transform DEF='BezierCircle_001_TRANSFORM' rotation='-0 0.707107 0.707107 3.14159' scale='-22.0686 -22.0686 -22.0686' translation='0 -2.68089 0'/>
     <Transform DEF='Point_TRANSFORM' rotation='-0 0.707107 0.707107 3.14159' scale='-1 -1 -1' translation='12.9516 -2.68089 -17.8252'>
       <PointLight DEF='LA_Point' radius='25'/>

@@ -1,0 +1,25 @@
+body {
+    padding-top: 70px;
+}
+
+#x3d_element {
+    border: none;
+    width: 100%;
+    height: 70%;
+}
+
+.panel-x3d {
+    background: radial-gradient(#333, #000);
+}
+
+.dropdown {
+    margin-bottom: 20px;
+}
+
+#log {
+    background-color: #000;
+    color: #fff;
+    height: 60px;
+    overflow-y: scroll;
+    display: none;
+}
