@@ -18,3 +18,4 @@ testing visualization of neurons and brain by using x3dom
 ## Reference
 - https://www.x3dom.org/
 - https://doc.x3dom.org/author/index.html
+- https://x3dom.org/docs-old/tutorial/aopt.html : tool for optimizing and generating binary geometry for x3d
