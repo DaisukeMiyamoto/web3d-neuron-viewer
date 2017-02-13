@@ -16,14 +16,18 @@
 <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/release/x3dom.css'/>
 
 <!-- jquery -->
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+<script src="<?php echo URL_BASE; ?>/lib/jquery-3.1.1.min.js"></script>
 <!--<link href="--><?php //echo URL_BASE; ?><!--/lib/jquery-ui.css" rel="stylesheet">-->
 <!--<script src="--><?php //echo URL_BASE; ?><!--/lib/jquery-ui.min.js"></script>-->
 
 <!-- Bootstrap -->
 <link href="<?php echo URL_BASE; ?>/lib/bootstrap.min.css" rel="stylesheet">
 <script src="<?php echo URL_BASE; ?>/lib/bootstrap.min.js"></script>
+
+<!-- Bootstrap extensions -->
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/lib/switch.css'/>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/bootstrap-slider.min.js"></script>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css" />
 
 <!-- mycss -->
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/my.css'/>

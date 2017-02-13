@@ -20,10 +20,9 @@ if (isset($_GET['name'])) {
             3D Viewer [<?php echo $filename ?>]
         </div>
         <div class="panel-body panel-x3d">
-            <x3d id="x3d_element" showStat="true" showLog="true"
-                 xmlns="http://www.web3d.org/specifications/x3d-namespace">
+            <x3d id="x3d_element" showStat="true" showLog="true">
                 <scene id="x3d_scene">
-                    <viewpoint position="0.0 0.0 300.0" zNear="0.01"
+                    <viewpoint position="0.0 0.0 400.0" zNear="0.01"
                                zFar="10000"></viewpoint>
                     <Transform>
 <!--                        <VolumeData id='volume' dimensions='256 256 88'>-->
@@ -33,19 +32,24 @@ if (isset($_GET['name'])) {
 <!--                            <!--                            <MPRVolumeStyle id='style' positionLine='0.5'></MPRVolumeStyle>-->-->
 <!--                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'></OpacityMapVolumeStyle>-->
 <!--                        </VolumeData>-->
-                        <VolumeData id='volume' dimensions='256 256 77'>
+                        <VolumeData id='volume_slice' dimensions='256 256 77' render="false">
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
                             <MPRVolumeStyle id='mpr_volume_style' enabled='true' positionLine='0.5' finalLine='0.0,0.0,0.0' originLine='0.0,0.0,1.0'></MPRVolumeStyle>
-<!--                            <OpacityMapVolumeStyle id='opacity_volume_style' enabled='true' lightFactor='1.2'-->
-<!--                                                   opacityFactor='6.0'>-->
+                        </VolumeData>
+
+                        <VolumeData id='volume' dimensions='256 256 77'>
+                            <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
+                                               slicesOverY='7' url='./volume_data/sb_stitch.png'>
+                            </ImageTextureAtlas>
+                            <OpacityMapVolumeStyle id='opacity_volume_style' enabled='true' lightFactor='1.2'
+                                                   opacityFactor='20.0'>
 <!--                                <ImageTexture containerField='transferFunction' url='./volume_data/transfer.png'/>-->
-<!--                            </OpacityMapVolumeStyle>-->
+                            </OpacityMapVolumeStyle>
                         </VolumeData>
 
                     </Transform>
-                    <Inline nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d"/>
                 </scene>
             </x3d>
         </div>
@@ -54,7 +58,22 @@ if (isset($_GET['name'])) {
                 <div class="row">
                     <ul class="list-group">
                         <?php echo draw_showinfo_button(); ?>
-                        <?php echo draw_slicemode_button(); ?>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        <div class="panel-footer">
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="list-group">
+                        <?php echo draw_volume_mode_button(); ?>
+                    </ul>
+                </div>
+            </div>
+            <div class="container-fluid">
+                <div class="row">
+                    <ul class="list-group">
+                        <?php echo draw_slice_mode_button(); ?>
                     </ul>
                 </div>
             </div>
@@ -81,18 +100,5 @@ if (isset($_GET['name'])) {
     </div>
 </div>
 
-
-<script type="text/javascript">
-    $('#slice_mode').click(function () {
-        if ($(this).is(":checked")) {
-            $('#mpr_volume_style').attr('enabled', 'true');
-//            $('#volume').append("<MPRVolumeStyle id='volume_style' enable='true' positionLine='0.5'></MPRVolumeStyle>")
-        } else {
-            $('#mpr_volume_style').attr('enabled', 'false');
-//            $('#volume').append("<OpacityMapVolumeStyle id='volume_style' enable='true' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>")
-        }
-    });
-
-</script>
 </body>
 </html>
