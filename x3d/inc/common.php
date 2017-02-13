@@ -8,15 +8,25 @@
 function draw_showinfo_button()
 {
     $str = <<<EOT
-                        <span>
-                            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
-                                Show Info
-                                <div class="material-switch pull-right">
-                                    <input type="checkbox" id="show_info" class="show_info" checked/>
-                                    <label for="show_info" class="label-info"></label>
-                                </div>
-                            </li>
-                        </span>
+        <span>
+            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+                Show Info
+                <div class="material-switch pull-right">
+                    <input type="checkbox" id="show_info" class="show_info" checked/>
+                    <label for="show_info" class="label-info"></label>
+                </div>
+            </li>
+        </span>
+
+        <script type="text/javascript">
+            $('#show_info').click(function () {
+                if ($(this).is(":checked")) {
+                    $('#x3dom-state-viewer').css('display', 'block');
+                } else {
+                    $('#x3dom-state-viewer').css('display', 'none');
+                }
+            });
+        </script>
 EOT;
     return $str;
 }

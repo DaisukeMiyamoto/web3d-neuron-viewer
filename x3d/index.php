@@ -59,15 +59,7 @@ $neuron_list = array(
             <div class="container-fluid">
                 <div class="row">
                     <ul class="list-group">
-                        <span>
-                            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
-                                Show Info
-                                <div class="material-switch pull-right">
-                                    <input type="checkbox" id="show_info" class="show_info" checked/>
-                                    <label for="show_info" class="label-info"></label>
-                                </div>
-                            </li>
-                        </span>
+                        <?php echo draw_showinfo_button(); ?>
                         <span>
                             <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
                                 Coloring
@@ -116,10 +108,6 @@ $neuron_list = array(
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="<?php echo URL_BASE; ?>/lib/jquery-ui.min.js"></script>
-<script src="<?php echo URL_BASE; ?>/lib/bootstrap.min.js"></script>
-
 <script type="text/javascript">
     $(document).ready(function () {
         $(".slider").slider({
@@ -137,14 +125,6 @@ $neuron_list = array(
         } else {
             $('#log').append('Remove: ' + this.id + '<br />\n');
             $('#inline_' + this.id).remove();
-        }
-    });
-
-    $('#show_info').click(function () {
-        if ($(this).is(":checked")) {
-            $('#x3dom-state-viewer').css('display', 'block');
-        } else {
-            $('#x3dom-state-viewer').css('display', 'none');
         }
     });
 

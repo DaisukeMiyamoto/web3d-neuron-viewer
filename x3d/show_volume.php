@@ -37,7 +37,7 @@ if (isset($_GET['name'])) {
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
-                            <MPRVolumeStyle id='volume_style' positionLine='0.2'></MPRVolumeStyle>
+                            <MPRVolumeStyle id='volume_style' enable='true' positionLine='0.5'></MPRVolumeStyle>
 <!--                            <OpacityMapVolumeStyle id='volume_style' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>-->
                         </VolumeData>
 
@@ -78,25 +78,15 @@ if (isset($_GET['name'])) {
     </div>
 </div>
 
-<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
-<script src="<?php echo URL_BASE; ?>/lib/jquery-ui.min.js"></script>
-<script src="<?php echo URL_BASE; ?>/lib/bootstrap.min.js"></script>
 
 <script type="text/javascript">
-    $('#show_info').click(function () {
-        if ($(this).is(":checked")) {
-            $('#x3dom-state-viewer').css('display', 'block');
-        } else {
-            $('#x3dom-state-viewer').css('display', 'none');
-        }
-    });
-
     $('#slice_mode').click(function () {
         $('#volume_style').remove();
         if ($(this).is(":checked")) {
-            $('#volume').append("<MPRVolumeStyle id='volume_style' positionLine='0.5'></MPRVolumeStyle>")
+            $('#volume_style').attr()
+//            $('#volume').append("<MPRVolumeStyle id='volume_style' enable='true' positionLine='0.5'></MPRVolumeStyle>")
         } else {
-            $('#volume').append("<OpacityMapVolumeStyle id='volume_style' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>")
+//            $('#volume').append("<OpacityMapVolumeStyle id='volume_style' enable='true' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>")
         }
     });
 
