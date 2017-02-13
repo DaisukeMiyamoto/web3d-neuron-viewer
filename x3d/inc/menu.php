@@ -24,6 +24,7 @@
                 <li><a href="<?php echo URL_BASE ?>/">Home</a></li>
                 <li class="active"><a href="<?php echo URL_BASE ?>/">Standard Brain</a></li>
                 <li><a href="<?php echo URL_BASE ?>/show_x3d.php">Show x3d</a></li>
+                <li><a href="<?php echo URL_BASE ?>/show_volume.php">Show volume</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>
