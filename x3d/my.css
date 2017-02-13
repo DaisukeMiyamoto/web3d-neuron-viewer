@@ -2,6 +2,11 @@ body {
     padding-top: 70px;
 }
 
+.jumbotron {
+    background: radial-gradient(#666, #111) !important;
+    color: #fff;
+}
+
 #x3d_element {
     border: none;
     width: 100%;
