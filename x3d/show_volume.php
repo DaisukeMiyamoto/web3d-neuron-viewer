@@ -23,19 +23,26 @@ if (isset($_GET['name'])) {
             <x3d id="x3d_element" showStat="true" showLog="true"
                  xmlns="http://www.web3d.org/specifications/x3d-namespace">
                 <scene id="x3d_scene">
-                    <!--                    <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>-->
-                    <Viewpoint position="308.65832 18.12571 85.00822" orientation="0.51687 0.47321 0.71338 2.09034"
-                               zNear="0.01000" zFar="10000.00000" description="Default"></Viewpoint>
+                    <viewpoint position="0.0 0.0 300.0" zNear="0.01"
+                               zFar="10000"></viewpoint>
                     <Transform>
-                        <VolumeData id='volume' dimensions='128 128 227'>
-                            <ImageTextureAtlas containerField='voxels' numberOfSlices='227' slicesOverX='16'
-                                               slicesOverY='16' url='internals2048.png'>
+<!--                        <VolumeData id='volume' dimensions='256 256 88'>-->
+<!--                            <ImageTextureAtlas containerField='voxels' numberOfSlices='88' slicesOverX='11'-->
+<!--                                               slicesOverY='8' url='./volume_data/1089_050622_4f4a_sn_stitch.png'>-->
+<!--                            </ImageTextureAtlas>-->
+<!--                            <!--                            <MPRVolumeStyle id='style' positionLine='0.5'></MPRVolumeStyle>-->-->
+<!--                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'></OpacityMapVolumeStyle>-->
+<!--                        </VolumeData>-->
+                        <VolumeData id='volume' dimensions='256 256 77'>
+                            <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
+                                               slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
-                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'>
-                            </OpacityMapVolumeStyle>
+                            <MPRVolumeStyle id='volume_style' positionLine='0.2'></MPRVolumeStyle>
+<!--                            <OpacityMapVolumeStyle id='volume_style' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>-->
                         </VolumeData>
+
                     </Transform>
-                    <!--                    <Inline nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d"/>-->
+                    <Inline nameSpaceName="cube" mapDEFToID="true" url="data/cube.x3d"/>
                 </scene>
             </x3d>
         </div>
@@ -43,15 +50,8 @@ if (isset($_GET['name'])) {
             <div class="container-fluid">
                 <div class="row">
                     <ul class="list-group">
-                        <span>
-                            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
-                                Show Info
-                                <div class="material-switch pull-right">
-                                    <input type="checkbox" id="show_info" class="show_info" checked/>
-                                    <label for="show_info" class="label-info"></label>
-                                </div>
-                            </li>
-                        </span>
+                        <?php echo draw_showinfo_button(); ?>
+                        <?php echo draw_slicemode_button(); ?>
                     </ul>
                 </div>
             </div>
@@ -67,12 +67,7 @@ if (isset($_GET['name'])) {
                     </button>
                     <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
                         <li><a href="./show_x3d.php?name=standardbrain_decimate">Standard Brain Decimated</a></li>
-                        <li><a href="./show_x3d.php?name=standardbrain_decimate_trans">Standard Brain Transparent</a>
-                        </li>
-                        <li><a href="./show_x3d.php?name=standardbrain_full">Standard Brain Full</a></li>
-                        <li><a href="./show_x3d.php?name=standardbrain_aopt">Standard Brain AOPT</a></li>
                         <li role="separator" class="divider"></li>
-                        <li><a href="./show_x3d.php?name=0004_regist_aopt">Neuron 0004</a></li>
                         <li><a href="./show_x3d.php?name=1080_regist_aopt">Neuron 1080</a></li>
                     </ul>
                 </div>
@@ -95,6 +90,16 @@ if (isset($_GET['name'])) {
             $('#x3dom-state-viewer').css('display', 'none');
         }
     });
+
+    $('#slice_mode').click(function () {
+        $('#volume_style').remove();
+        if ($(this).is(":checked")) {
+            $('#volume').append("<MPRVolumeStyle id='volume_style' positionLine='0.5'></MPRVolumeStyle>")
+        } else {
+            $('#volume').append("<OpacityMapVolumeStyle id='volume_style' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>")
+        }
+    });
+
 </script>
 </body>
 </html>

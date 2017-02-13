@@ -20,3 +20,5 @@
 <link href="<?php echo URL_BASE; ?>/lib/jquery-ui.css" rel="stylesheet">
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/my.css'/>
 
+<?php require(INC_BASE . "/common.php"); ?>
+
