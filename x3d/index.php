@@ -13,7 +13,7 @@ define("PAGE_NO", 0);
 <?php require(INC_BASE . "/menu.php"); ?>
 
 <div class="container">
-    <div class="jumbotron">
+    <div class="jumbotron" id="top">
         <h1 class="display-3">Welcome to CNS-PF Viewer</h1>
         <p class="lead">3D Viewer for neurons and brains based on x3dom.</p>
         <a class="btn btn-info" href="https://github.com/DaisukeMiyamoto/test_x3dom" role="button">Get source in GitHub
