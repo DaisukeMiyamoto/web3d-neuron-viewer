@@ -17,7 +17,8 @@ testing visualization of neurons and brain by using x3dom
 1. open 3d stacked tif image by Fiji/ImageJ
 1. adjust image size about **128 px x 128 px x 128 slice**
 1. save as sequential tif image
-1. stitch sequential images by Grid/Collection Stitching Plugin in Fiji/ImageJ
+1. stitch sequential images by *"Grid/Collection Stitching Plugin"* in Fiji/ImageJ
+1. save stitched image as png format
 
 ![Screenshot](https://github.com/DaisukeMiyamoto/test_x3dom/blob/master/x3d/volume_data/1089_050622_4f4a_sn_stitch.png?raw=true)
 

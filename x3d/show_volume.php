@@ -2,11 +2,13 @@
 define("URL_BASE", "/x3d");
 define("INC_BASE", "./inc");
 define("DATA_DIR", "./data");
+define("PAGE_NO", 3);
+define("SHOW_LOG", "false");
 
 if (isset($_GET['name'])) {
     $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . ".x3d";
 } else {
-    $filename = DATA_DIR . "/" . "standardbrain_aopt.x3d";
+    $filename = DATA_DIR . "/" . "sb_stitch.png";
 }
 ?>
 <html>
@@ -20,7 +22,7 @@ if (isset($_GET['name'])) {
             3D Viewer [<?php echo $filename ?>]
         </div>
         <div class="panel-body panel-x3d">
-            <x3d id="x3d_element" showStat="true" showLog="true">
+            <x3d id="x3d_element" showStat="true" showLog="<?php echo SHOW_LOG; ?>">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 400.0" zNear="0.01"
                                zFar="10000"></viewpoint>
