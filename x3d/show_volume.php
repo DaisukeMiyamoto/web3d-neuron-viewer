@@ -37,8 +37,11 @@ if (isset($_GET['name'])) {
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
-                            <MPRVolumeStyle id='volume_style' enable='true' positionLine='0.5'></MPRVolumeStyle>
-<!--                            <OpacityMapVolumeStyle id='volume_style' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>-->
+                            <MPRVolumeStyle id='mpr_volume_style' enabled='true' positionLine='0.5' finalLine='0.0,0.0,0.0' originLine='0.0,0.0,1.0'></MPRVolumeStyle>
+<!--                            <OpacityMapVolumeStyle id='opacity_volume_style' enabled='true' lightFactor='1.2'-->
+<!--                                                   opacityFactor='6.0'>-->
+<!--                                <ImageTexture containerField='transferFunction' url='./volume_data/transfer.png'/>-->
+<!--                            </OpacityMapVolumeStyle>-->
                         </VolumeData>
 
                     </Transform>
@@ -81,11 +84,11 @@ if (isset($_GET['name'])) {
 
 <script type="text/javascript">
     $('#slice_mode').click(function () {
-        $('#volume_style').remove();
         if ($(this).is(":checked")) {
-            $('#volume_style').attr()
+            $('#mpr_volume_style').attr('enabled', 'true');
 //            $('#volume').append("<MPRVolumeStyle id='volume_style' enable='true' positionLine='0.5'></MPRVolumeStyle>")
         } else {
+            $('#mpr_volume_style').attr('enabled', 'false');
 //            $('#volume').append("<OpacityMapVolumeStyle id='volume_style' enable='true' lightFactor='1.1' opacityFactor='10.0'></OpacityMapVolumeStyle>")
         }
     });
