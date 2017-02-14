@@ -38,7 +38,7 @@ if (isset($_GET['name'])) {
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
-                            <MPRVolumeStyle id='mpr_volume_style' enabled='true' positionLine='0.5' finalLine='0.0,0.0,0.0' originLine='0.0,0.0,1.0'></MPRVolumeStyle>
+                            <MPRVolumeStyle id='mpr_volume_style' enabled='true' positionLine='0.5' finalLine='0.0,0.0,1.0' originLine='0.0,0.0,0.0'></MPRVolumeStyle>
                         </VolumeData>
 
                         <VolumeData id='volume' dimensions='256 256 77'>
