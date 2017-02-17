@@ -43,7 +43,7 @@ if (isset($_GET['name'])) {
             <x3d id="x3d_element" showStat="true" showLog="<?php echo SHOW_LOG; ?>">
                 <scene id="x3d_scene">
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
-                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"></Inline>>
+                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"></Inline>
                 </scene>
             </x3d>
         </div>
