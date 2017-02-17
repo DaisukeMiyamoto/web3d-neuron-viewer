@@ -2,16 +2,8 @@
 <project version="4">
   <component name="WebServers">
     <option name="servers">
-      <webServer id="ea3e36d4-8c27-4271-bc8a-74f593e192c0" name="bond" url="http://192.168.0.249">
-        <fileTransfer host="192.168.0.249" port="22" privateKey="C:\cygwin64\home\nebula\.ssh\id_rsa" accessType="SFTP" keyPair="true">
-          <advancedOptions>
-            <advancedOptions dataProtectionLevel="Private" />
-          </advancedOptions>
-          <option name="port" value="22" />
-        </fileTransfer>
-      </webServer>
       <webServer id="4b9a4aec-781e-4f51-a7ef-9605268e8fbd" name="cnspf" url="http://cns.neuroinf.jp">
-        <fileTransfer host="cns.neuroinf.jp" port="22" privateKey="C:\cygwin64\home\nebula\.ssh\id_rsa" accessType="SFTP" keyPair="true">
+        <fileTransfer host="cns.neuroinf.jp" port="22" privateKey="$USER_HOME$/.ssh/id_rsa" accessType="SFTP" keyPair="true">
           <advancedOptions>
             <advancedOptions dataProtectionLevel="Private" />
           </advancedOptions>
