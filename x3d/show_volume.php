@@ -27,18 +27,20 @@ if (isset($_GET['name'])) {
                     <viewpoint position="0.0 0.0 400.0" zNear="0.01"
                                zFar="10000"></viewpoint>
                     <Transform>
-<!--                        <VolumeData id='volume' dimensions='256 256 88'>-->
-<!--                            <ImageTextureAtlas containerField='voxels' numberOfSlices='88' slicesOverX='11'-->
-<!--                                               slicesOverY='8' url='./volume_data/1089_050622_4f4a_sn_stitch.png'>-->
-<!--                            </ImageTextureAtlas>-->
-<!--                            <!--                            <MPRVolumeStyle id='style' positionLine='0.5'></MPRVolumeStyle>-->-->
-<!--                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'></OpacityMapVolumeStyle>-->
-<!--                        </VolumeData>-->
+                        <!--                        <VolumeData id='volume' dimensions='256 256 88'>-->
+                        <!--                            <ImageTextureAtlas containerField='voxels' numberOfSlices='88' slicesOverX='11'-->
+                        <!--                                               slicesOverY='8' url='./volume_data/1089_050622_4f4a_sn_stitch.png'>-->
+                        <!--                            </ImageTextureAtlas>-->
+                        <!--                            <!--                            <MPRVolumeStyle id='style' positionLine='0.5'></MPRVolumeStyle>-->
+                        -->
+                        <!--                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'></OpacityMapVolumeStyle>-->
+                        <!--                        </VolumeData>-->
                         <VolumeData id='volume_slice' dimensions='256 256 77' render="false">
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
-                            <MPRVolumeStyle id='mpr_volume_style' enabled='true' positionLine='0.5' finalLine='0.0,0.0,0.0' originLine='0.0,0.0,1.0'></MPRVolumeStyle>
+                            <MPRVolumeStyle id='mpr_volume_style' enabled='true' positionLine='0.5'
+                                            finalLine='0.0,0.0,1.0' originLine='0.0,0.0,0.0'></MPRVolumeStyle>
                         </VolumeData>
 
                         <VolumeData id='volume' dimensions='256 256 77'>
@@ -47,7 +49,7 @@ if (isset($_GET['name'])) {
                             </ImageTextureAtlas>
                             <OpacityMapVolumeStyle id='opacity_volume_style' enabled='true' lightFactor='1.2'
                                                    opacityFactor='20.0'>
-<!--                                <ImageTexture containerField='transferFunction' url='./volume_data/transfer.png'/>-->
+                                <!--                                <ImageTexture containerField='transferFunction' url='./volume_data/transfer.png'/>-->
                             </OpacityMapVolumeStyle>
                         </VolumeData>
 
@@ -75,32 +77,27 @@ if (isset($_GET['name'])) {
             <div class="container-fluid">
                 <div class="row">
                     <ul class="list-group">
+                        <span class="dropdown">
+                            <li class="list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1"
+                                data-toggle="dropdown" aria-haspopup="true" aria-expanded="true">
+                                <s>Select Plane</s> <span class="caret"></span>
+                            </li>
+                            <ul class="dropdown-menu">
+                                <li><a href="#">Not Show</a></li>
+                                <li><a href="#">X-Y Plane</a></li>
+                                <li><a href="#">Y-Z Plane</a></li>
+                                <li><a href="#">Z-X Plane</a></li>
+                            </ul>
+                        </span>
                         <?php echo draw_slice_mode_button(); ?>
                     </ul>
                 </div>
             </div>
         </div>
-        <div class="panel-footer">
-            <div class="container-fluid">
-                <div class="dropdown">
-                    <button class="btn btn-default dropdown-toggle" type="button" id="dropdownMenu1"
-                            data-toggle="dropdown"
-                            aria-haspopup="true" aria-expanded="true">
-                        Choose Model
-                        <span class="caret"></span>
-                    </button>
-                    <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-                        <li><a href="./show_x3d.php?name=standardbrain_decimate">Standard Brain Decimated</a></li>
-                        <li role="separator" class="divider"></li>
-                        <li><a href="./show_x3d.php?name=1080_regist_aopt">Neuron 1080</a></li>
-                    </ul>
-                </div>
-            </div>
-        </div>
+
         <div class="panel-footer" id="log">
         </div>
     </div>
 </div>
-
 </body>
 </html>

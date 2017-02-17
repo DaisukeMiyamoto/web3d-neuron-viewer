@@ -33,7 +33,7 @@ EOT;
 
 function draw_slice_mode_button()
 {
-    $str = <<<EOT
+    $str = <<<HTML
         <span>
             <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
                 Slice Mode
@@ -70,13 +70,13 @@ function draw_slice_mode_button()
                 $('#mpr_volume_style').attr('positionline', $(this).val())
             });
         </script>
-EOT;
+HTML;
     return $str;
 }
 
 function draw_volume_mode_button()
 {
-    $str = <<<EOT
+    $str = <<<HTML
         <span>
             <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
                 Volume Mode
@@ -96,6 +96,6 @@ function draw_volume_mode_button()
                 }
             });
         </script>
-EOT;
+HTML;
     return $str;
 }
