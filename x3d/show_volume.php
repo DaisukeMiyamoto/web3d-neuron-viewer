@@ -32,7 +32,6 @@ if (isset($_GET['name'])) {
                         <!--                                               slicesOverY='8' url='./volume_data/1089_050622_4f4a_sn_stitch.png'>-->
                         <!--                            </ImageTextureAtlas>-->
                         <!--                            <!--                            <MPRVolumeStyle id='style' positionLine='0.5'></MPRVolumeStyle>-->
-                        -->
                         <!--                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'></OpacityMapVolumeStyle>-->
                         <!--                        </VolumeData>-->
                         <VolumeData id='volume_slice' dimensions='256 256 77' render="false">
