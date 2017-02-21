@@ -34,8 +34,12 @@ if (isset($_GET['name'])) {
             <li><a href="./show_x3d.php?name=1080_regist_aopt">Neuron 1080</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=nagatama_decimate2_20170221">Nagatama Decimated</a></li>
+            <li><a href="./show_x3d.php?name=nagatama_decimate2_aopt">Nagatama Decimated AOPT</a></li>
             <li><a href="./show_x3d.php?name=suziguro_decimate">Suziguro Decimated1</a></li>
             <li><a href="./show_x3d.php?name=suziguro_decimate2">Suziguro Decimated2</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate">Yamamayu Decimated1</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate2">Yamamayu Decimated2</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate2_flat">Yamamayu Decimated2 Flat</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">

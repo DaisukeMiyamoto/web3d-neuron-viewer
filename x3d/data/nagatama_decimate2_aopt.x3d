@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.75 0.75' headlight='false' type='"EXAMINE" "ANY"'/>
+    <Background DEF='WO_World' groundColor='0.051 0.051 0.051' skyColor='0.051 0.051 0.051'/>
+    <Transform DEF='Shape_IndexedFaceSet_TRANSFORM' scale='0.01 0.01 0.01' translation='-4.36171 -3.80741 -0.547686'>
+      <Transform DEF='Shape_IndexedFaceSet_ifs_TRANSFORM' translation='-2.6e-005 -2e-006 -1e-005'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet'>
+          <Shape DEF='SP_0'>
+            <Appearance>
+              <Material DEF='MA_Shape' ambientIntensity='0' diffuseColor='1 1 1' shininess='0.779'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_0' vertexCount='69854 1526349' primType='"TRIANGLESTRIP" "TRIANGLES"' position='382.430053711 309.229064941 108.512702942' size='764.879882813 618.477905273 217.04460144' coord='bingeo_nagatama_decimate2/BG_0_coordBinary.bin+8' normal='bingeo_nagatama_decimate2/BG_0_normalBinary.bin+4' color='bingeo_nagatama_decimate2/BG_0_colorBinary.bin+4' coordType='Int16' normalType='Int8' colorType='Uint8'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+    <Transform DEF='Lamp_TRANSFORM' rotation='-0.498084 -0.762016 -0.413815 1.51388' translation='-4.07624 5.90386 1.00545'>
+      <PointLight DEF='LA_Lamp' intensity='0.5714' radius='30'/>
+    </Transform>
+    <Transform DEF='Camera_TRANSFORM' rotation='-0.098233 -0.968789 -0.227591 2.34949' translation='-7.48113 5.34367 -6.50764'>
+      <Viewpoint DEF='CA_Camera' position='-0 -0 0' fieldOfView='0.858'/>
+    </Transform>
+  </Scene>
+</X3D>
