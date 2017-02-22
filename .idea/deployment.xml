@@ -5,7 +5,7 @@
       <paths name="bond">
         <serverdata>
           <mappings>
-            <mapping deploy="/var/www/html/x3d" local="$PROJECT_DIR$/x3d" web="x3d" />
+            <mapping deploy="/var/www/x3d" local="$PROJECT_DIR$/x3d" web="/" />
           </mappings>
         </serverdata>
       </paths>

@@ -32,6 +32,14 @@ if (isset($_GET['name'])) {
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=0004_regist_aopt">Neuron 0004</a></li>
             <li><a href="./show_x3d.php?name=1080_regist_aopt">Neuron 1080</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="./show_x3d.php?name=nagatama_decimate2_20170221">Nagatama Decimated</a></li>
+            <li><a href="./show_x3d.php?name=nagatama_decimate2_aopt">Nagatama Decimated AOPT</a></li>
+            <li><a href="./show_x3d.php?name=suziguro_decimate">Suziguro Decimated1</a></li>
+            <li><a href="./show_x3d.php?name=suziguro_decimate2">Suziguro Decimated2</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate">Yamamayu Decimated1</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate2">Yamamayu Decimated2</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate2_flat">Yamamayu Decimated2 Flat</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">
@@ -42,8 +50,9 @@ if (isset($_GET['name'])) {
         <div class="panel-body panel-x3d">
             <x3d id="x3d_element" showStat="true" showLog="<?php echo SHOW_LOG; ?>">
                 <scene id="x3d_scene">
+                    <navigationInfo id="head" headlight='true' type='"EXAMINE"'>  </navigationInfo>
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
-                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"></Inline>>
+                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"></Inline>
                 </scene>
             </x3d>
         </div>
