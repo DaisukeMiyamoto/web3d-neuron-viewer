@@ -24,7 +24,7 @@ if (isset($_GET['name'])) {
         <div class="panel-body panel-x3d">
             <x3d id="x3d_element" showStat="true" showLog="<?php echo SHOW_LOG; ?>">
                 <scene id="x3d_scene">
-                    <viewpoint position="0.0 0.0 400.0" zNear="0.01"
+                    <viewpoint position="0.0 0.0 8.0" zNear="0.01"
                                zFar="10000"></viewpoint>
                     <Transform>
                         <!--                        <VolumeData id='volume' dimensions='256 256 88'>-->
@@ -35,7 +35,7 @@ if (isset($_GET['name'])) {
                         -->
                         <!--                            <OpacityMapVolumeStyle lightFactor='1.4' opacityFactor='45.0'></OpacityMapVolumeStyle>-->
                         <!--                        </VolumeData>-->
-                        <VolumeData id='volume_slice' dimensions='256 256 77' render="false">
+                        <VolumeData id='volume_slice' dimensions='4 4 2' render="false">
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
@@ -43,12 +43,12 @@ if (isset($_GET['name'])) {
                                             finalLine='0.0,0.0,1.0' originLine='0.0,0.0,0.0'></MPRVolumeStyle>
                         </VolumeData>
 
-                        <VolumeData id='volume' dimensions='256 256 77'>
+                        <VolumeData id='volume' dimensions='4 4 2'>
                             <ImageTextureAtlas containerField='voxels' numberOfSlices='77' slicesOverX='11'
                                                slicesOverY='7' url='./volume_data/sb_stitch.png'>
                             </ImageTextureAtlas>
                             <OpacityMapVolumeStyle id='opacity_volume_style' enabled='true' lightFactor='1.2'
-                                                   opacityFactor='20.0'>
+                                                   opacityFactor='6.0'>
                                 <!--                                <ImageTexture containerField='transferFunction' url='./volume_data/transfer.png'/>-->
                             </OpacityMapVolumeStyle>
                         </VolumeData>
