@@ -32,11 +32,11 @@ if (isset($_GET['name'])) {
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="./show_x3d.php?name=nagatama">Nagatama</a></li>
+            <li><a href="./invbrain.php?name=nagatama">Nagatama</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./show_x3d.php?name=suziguro">Suziguro</a></li>
+            <li><a href="./invbrain.php?name=suziguro">Suziguro</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./show_x3d.php?name=yamamayuga">Yamamayuga</a></li>
+            <li><a href="./invbrain.php?name=yamamayuga">Yamamayuga</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">

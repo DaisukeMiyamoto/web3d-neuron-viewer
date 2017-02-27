@@ -1,0 +1,20 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.75 0.75' type='"EXAMINE" "ANY"'/>
+    <Background DEF='WO_World' groundColor='0.051 0.051 0.051' skyColor='0.051 0.051 0.051'/>
+    <Transform DEF='suziguro_outline_TRANSFORM' rotation='0 -0 1 3.14159' scale='0.01 0.01 0.01'>
+      <Transform DEF='suziguro_outline_ifs_TRANSFORM'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet'>
+          <Shape DEF='SP_0'>
+            <Appearance>
+              <Material DEF='MA_Shape' ambientIntensity='0.067' shininess='0.201'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_0' vertexCount='252551 25110' primType='"TRIANGLESTRIP" "TRIANGLES"' position='-0.0166015625 6.103515625e-005 -1.3388671875' size='1787.87805176 1039.2565918 470.233062744' coord='bingeo_suziguro_outline_decimate2/BG_0_coordBinary.bin+8' normal='bingeo_suziguro_outline_decimate2/BG_0_normalBinary.bin+4' color='bingeo_suziguro_outline_decimate2/BG_0_colorBinary.bin+4' coordType='Int16' normalType='Int8' colorType='Uint8'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+  </Scene>
+</X3D>
