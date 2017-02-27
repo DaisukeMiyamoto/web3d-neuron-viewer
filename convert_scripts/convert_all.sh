@@ -6,13 +6,12 @@ BLENDER_OPT=--background
 IMPORT_PYTHON=./decimate_x3d.py
 TARGET_LIST="\
 nagatama_labels \
+nagatama_outline \
+suziguro_labels \
+suziguro_outline \
+yamamayuga_labels \
+yamamayuga_outline \
 "
-
-#nagatama_outline \
-#suziguro_labels \
-#suziguro_outline \
-#yamamayuga_labels \
-#yamamayuga_outline \
 
 
 for TARGET in ${TARGET_LIST}; do

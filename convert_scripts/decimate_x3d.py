@@ -4,22 +4,29 @@ import math
 import os
 
 
-def apply_dissolve(obj):
+def apply_dissolve(obj, angle=10):
     mod = obj.modifiers.new(name='decimate1', type='DECIMATE')
     mod.decimate_type = 'DISSOLVE'
-    mod.angle_limit = math.radians(10)
+    mod.angle_limit = math.radians(angle)
     bpy.context.scene.objects.active = obj
     bpy.ops.object.modifier_apply(modifier='decimate1', apply_as='DATA')
     print('Faces (DISSOLVE): %d' % len(obj.data.polygons))
 
 
-def apply_collapse(obj):
+def apply_collapse(obj, ratio=0.4):
     mod = obj.modifiers.new(name='decimate2', type='DECIMATE')
     mod.decimate_type = 'COLLAPSE'
-    mod.ratio = 0.4
+    mod.ratio = ratio
     bpy.context.scene.objects.active = obj
     bpy.ops.object.modifier_apply(modifier='decimate2', apply_as='DATA')
     print('Faces (COLLAPSE): %d' % len(obj.data.polygons))
+
+
+def export_x3d(filename):
+    bpy.ops.export_scene.x3d(filepath=filename,
+                             use_mesh_modifiers=True, use_normals=True,
+                             use_selection=True, name_decorations=True)
+
 
 
 if __name__ == '__main__':
@@ -52,16 +59,16 @@ if __name__ == '__main__':
         ob.scale = (0.01, 0.01, 0.01)
         print('Location: ', ob.location)
         ob.location = (0, 0, 0)
-        # ob.rotation_euler[1] = math.radians(180)
-        # apply_decimate(ob)
 
-
-        # bpy.ops.object.join()
         print('Faces: %d' % len(ob.data.polygons))
         bpy.ops.wm.save_as_mainfile(filepath=os.path.join(work_dir, filename + '.blend'))
-        # bpy.ops.export_scene.x3d(filepath=work_dir + filename + '.x3d',
-        #                          use_mesh_modifiers=True, use_normals=True,
-        #                          use_selection=True, name_decorations=True)
+        export_x3d(os.path.join(work_dir, filename + '.x3d'))
+        apply_dissolve(ob)
+        export_x3d(os.path.join(work_dir, filename + '_decimate1.x3d'))
+        apply_collapse(ob)
+        export_x3d(os.path.join(work_dir,filename + '_decimate2.x3d'))
+
+        # bpy.ops.object.join()
         print('Finished!')
 
     main('/home/nebula/work/seki_data/x3d')
