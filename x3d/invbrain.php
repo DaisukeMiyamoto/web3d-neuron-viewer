@@ -59,6 +59,7 @@ if (isset($_GET['name'])) {
                     <ul class="list-group">
                         <?php echo draw_showinfo_button(); ?>
                         <?php echo draw_headlight_button(); ?>
+                        <?php echo draw_outline_mode_button(); ?>
                     </ul>
                 </div>
             </div>
