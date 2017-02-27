@@ -61,6 +61,7 @@ if (isset($_GET['name'])) {
                 <div class="row">
                     <ul class="list-group">
                         <?php echo draw_showinfo_button(); ?>
+                        <?php echo draw_headlight_button(); ?>
                     </ul>
                 </div>
             </div>

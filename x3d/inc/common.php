@@ -7,7 +7,7 @@
  */
 function draw_showinfo_button()
 {
-    $str = <<<EOT
+    $str = <<<HTML
         <span>
             <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
                 Show Info
@@ -27,7 +27,34 @@ function draw_showinfo_button()
                 }
             });
         </script>
-EOT;
+HTML;
+
+    return $str;
+}
+
+function draw_headlight_button()
+{
+    $str = <<<HTML
+        <span>
+            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+                Headlight
+                <div class="material-switch pull-right">
+                    <input type="checkbox" id="headlight" checked/>
+                    <label for="headlight" class="label-info"></label>
+                </div>
+            </li>
+        </span>
+        <script type="text/javascript">
+            $('#headlight').click(function () {
+                if ($(this).is(":checked")) {
+                    $('#head').attr('headlight', 'true');
+                } else {
+                    $('#head').attr('headlight', 'false');
+                }
+            });
+        </script>
+HTML;
+
     return $str;
 }
 
