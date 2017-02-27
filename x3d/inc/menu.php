@@ -23,8 +23,9 @@
             <ul class="nav navbar-nav">
                 <li <?php if(PAGE_NO==0) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/">Home</a></li>
                 <li <?php if(PAGE_NO==1) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/standardbrain.php">Standard Brain</a></li>
-                <li <?php if(PAGE_NO==2) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_x3d.php">x3d files</a></li>
-                <li <?php if(PAGE_NO==3) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_volume.php">Volume files</a></li>
+                <li <?php if(PAGE_NO==2) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/invbrain.php">Invertebrate Brains</a></li>
+                <li <?php if(PAGE_NO==3) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_x3d.php">x3d files</a></li>
+                <li <?php if(PAGE_NO==4) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_volume.php">Volume files</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

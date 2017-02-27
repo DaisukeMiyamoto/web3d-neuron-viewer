@@ -2,7 +2,7 @@
 define("URL_BASE", "/x3d");
 define("INC_BASE", "./inc");
 define("DATA_DIR", "./data");
-define("PAGE_NO", 2);
+define("PAGE_NO", 3);
 define("SHOW_LOG", "false");
 
 if (isset($_GET['name'])) {
@@ -39,7 +39,7 @@ if (isset($_GET['name'])) {
             <li><a href="./show_x3d.php?name=suziguro_decimate2">Suziguro Decimated2</a></li>
             <li><a href="./show_x3d.php?name=yamamayu_decimate">Yamamayu Decimated1</a></li>
             <li><a href="./show_x3d.php?name=yamamayu_decimate2">Yamamayu Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=yamamayu_decimate2_flat">Yamamayu Decimated2 Flat</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_decimate2_flat">Yamamayu Decimated2 Smooth</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">
