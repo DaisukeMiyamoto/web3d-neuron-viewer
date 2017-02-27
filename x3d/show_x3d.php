@@ -40,6 +40,7 @@ if (isset($_GET['name'])) {
             <li><a href="./show_x3d.php?name=yamamayu_decimate">Yamamayu Decimated1</a></li>
             <li><a href="./show_x3d.php?name=yamamayu_decimate2">Yamamayu Decimated2</a></li>
             <li><a href="./show_x3d.php?name=yamamayu_decimate2_flat">Yamamayu Decimated2 Smooth</a></li>
+            <li><a href="./show_x3d.php?name=yamamayu_all_decimate">Yamamayu All Decimated2 Smooth</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">
