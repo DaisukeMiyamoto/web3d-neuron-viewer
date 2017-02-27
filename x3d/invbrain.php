@@ -13,9 +13,9 @@ define("PAGE_NO", 2);
 define("SHOW_LOG", "false");
 
 if (isset($_GET['name'])) {
-    $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . ".x3d";
+    $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . "_decimate2.x3d";
 } else {
-    $filename = DATA_DIR . "/" . "standardbrain_aopt.x3d";
+    $filename = DATA_DIR . "/" . "yamamayu_all_decimate.x3d";
 }
 ?>
 
@@ -32,21 +32,11 @@ if (isset($_GET['name'])) {
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="./show_x3d.php?name=standardbrain_decimate">Standard Brain Decimated</a></li>
-            <li><a href="./show_x3d.php?name=standardbrain_decimate_trans">Standard Brain Transparent</a></li>
-            <li><a href="./show_x3d.php?name=standardbrain_full">Standard Brain Full</a></li>
-            <li><a href="./show_x3d.php?name=standardbrain_aopt">Standard Brain AOPT</a></li>
+            <li><a href="./show_x3d.php?name=nagatama">Nagatama</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./show_x3d.php?name=0004_regist_aopt">Neuron 0004</a></li>
-            <li><a href="./show_x3d.php?name=1080_regist_aopt">Neuron 1080</a></li>
+            <li><a href="./show_x3d.php?name=suziguro">Suziguro</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./show_x3d.php?name=nagatama_decimate2_20170221">Nagatama Decimated</a></li>
-            <li><a href="./show_x3d.php?name=nagatama_decimate2_aopt">Nagatama Decimated AOPT</a></li>
-            <li><a href="./show_x3d.php?name=suziguro_decimate">Suziguro Decimated1</a></li>
-            <li><a href="./show_x3d.php?name=suziguro_decimate2">Suziguro Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=yamamayu_decimate">Yamamayu Decimated1</a></li>
-            <li><a href="./show_x3d.php?name=yamamayu_decimate2">Yamamayu Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=yamamayu_decimate2_flat">Yamamayu Decimated2 Flat</a></li>
+            <li><a href="./show_x3d.php?name=yamamayuga">Yamamayuga</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">

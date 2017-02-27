@@ -28,7 +28,6 @@ def export_x3d(filename):
                              use_selection=True, name_decorations=True)
 
 
-
 if __name__ == '__main__':
     def main(work_dir):
         argv = sys.argv
@@ -67,6 +66,7 @@ if __name__ == '__main__':
         export_x3d(os.path.join(work_dir, filename + '_decimate1.x3d'))
         apply_collapse(ob)
         export_x3d(os.path.join(work_dir,filename + '_decimate2.x3d'))
+        bpy.ops.wm.save_as_mainfile(filepath=os.path.join(work_dir, filename + '_decimate.blend'))
 
         # bpy.ops.object.join()
         print('Finished!')

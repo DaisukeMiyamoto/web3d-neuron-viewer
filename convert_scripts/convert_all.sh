@@ -1,6 +1,6 @@
-#!/usr/bin/env bash -x
+#!/bin/bash -x
 
-BLENDER=~/bin/blender-2.78b-linux-glibc219-x86_64//blender
+BLENDER=~/bin/blender-2.78b-linux-glibc219-x86_64/blender
 BLENDER_OPT=--background
 
 IMPORT_PYTHON=./decimate_x3d.py
