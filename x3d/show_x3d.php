@@ -62,6 +62,8 @@ if (isset($_GET['name'])) {
             <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate2">yamamayuga Outline Decimated2</a></li>
             <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate1_aopt">yamamayuga Outline Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate2_aopt">yamamayuga Outline Decimated2 AOPT</a></li>
+            <li role="separator" class="divider"></li>
+            <li><a href="./show_x3d.php?name=maeso">Maeso</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">

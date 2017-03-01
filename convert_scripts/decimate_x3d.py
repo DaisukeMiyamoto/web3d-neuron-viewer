@@ -30,6 +30,7 @@ def export_x3d(filename):
 
 if __name__ == '__main__':
     def main(work_dir):
+        print("start main")
         argv = sys.argv
         argv = argv[argv.index("--") + 1:]
         if not len(argv) == 1:
