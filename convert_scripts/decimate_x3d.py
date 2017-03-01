@@ -72,4 +72,4 @@ if __name__ == '__main__':
         # bpy.ops.object.join()
         print('Finished!')
 
-    main('/home/nebula/work/seki_data/x3d')
+    main('/home/nebula/work/cnspf/seki_data/x3d')
