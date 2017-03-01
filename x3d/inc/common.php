@@ -126,3 +126,28 @@ function draw_volume_mode_button()
 HTML;
     return $str;
 }
+function draw_outline_mode_button()
+{
+    $str = <<<HTML
+        <span>
+            <li class=" list-group-item col-6 col-sm-4 col-md-3 col-lg-2 col-xl-1">
+                Outline Mode
+                <div class="material-switch pull-right">
+                    <input type="checkbox" id="outline_mode" checked/>
+                    <label for="outline_mode" class="label-warning"></label>
+                </div>
+            </li>
+        </span>
+
+        <script type="text/javascript">
+            $('#outline_mode').click(function () {
+                if ($(this).is(":checked")) {
+                    $('#SB__Outline_TRANSFORM').attr('render', 'true');
+                } else {
+                    $('#SB__Outline_TRANSFORM').attr('render', 'false');
+                }
+            });
+        </script>
+HTML;
+    return $str;
+}

@@ -13,7 +13,7 @@ define("PAGE_NO", 2);
 define("SHOW_LOG", "false");
 
 if (isset($_GET['name'])) {
-    $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . "_decimate2.x3d";
+    $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . "_decimate2_aopt.x3d";
 } else {
     $filename = DATA_DIR . "/" . "yamamayu_all_decimate.x3d";
 }
@@ -32,11 +32,11 @@ if (isset($_GET['name'])) {
             <span class="caret"></span>
         </button>
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="./show_x3d.php?name=nagatama">Nagatama</a></li>
+            <li><a href="./invbrain.php?name=nagatama_labels">Nagatama</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./show_x3d.php?name=suziguro">Suziguro</a></li>
+            <li><a href="./invbrain.php?name=suziguro">Suziguro</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./show_x3d.php?name=yamamayuga">Yamamayuga</a></li>
+            <li><a href="./invbrain.php?name=yamamayu_all">Yamamayuga</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">
@@ -48,7 +48,7 @@ if (isset($_GET['name'])) {
             <x3d id="x3d_element" showStat="true" showLog="<?php echo SHOW_LOG; ?>">
                 <scene id="x3d_scene">
                     <navigationInfo id="head" headlight='true' type='"EXAMINE"'>  </navigationInfo>
-                    <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
+                    <viewpoint position="0.0 0.0 20.0" orientation="0.0 0.0 0.0"></viewpoint>
                     <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"></Inline>
                 </scene>
             </x3d>
@@ -59,6 +59,7 @@ if (isset($_GET['name'])) {
                     <ul class="list-group">
                         <?php echo draw_showinfo_button(); ?>
                         <?php echo draw_headlight_button(); ?>
+                        <?php echo draw_outline_mode_button(); ?>
                     </ul>
                 </div>
             </div>

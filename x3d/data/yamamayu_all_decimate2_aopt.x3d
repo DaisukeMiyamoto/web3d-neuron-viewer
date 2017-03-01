@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE X3D PUBLIC "ISO//Web3D//DTD X3D 3.0//EN" "http://www.web3d.org/specifications/x3d-3.0.dtd">
+<X3D xmlns:xsd='http://www.w3.org/2001/XMLSchema-instance' profile='Full' version='3.0' xsd:noNamespaceSchemaLocation='http://www.web3d.org/specifications/x3d-3.0.xsd'>
+  <Scene>
+    <NavigationInfo avatarSize='0.25 1.75 0.75' headlight='false' type='"EXAMINE" "ANY"'/>
+    <Background DEF='WO_World' groundColor='0.051 0.051 0.051' skyColor='0.051 0.051 0.051'/>
+    <Transform DEF='Outline_TRANSFORM' scale='0.01 0.01 0.01' translation='-12 -5 -5'>
+      <Transform DEF='Outline_ifs_TRANSFORM' translation='-7.8e-005 9e-006 -5.3e-005'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet'>
+          <Shape DEF='SP_0'>
+            <Appearance>
+              <Material DEF='MA_Shape' ambientIntensity='0.067' shininess='0.201' transparency='0.8'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_0' vertexCount='45727 2058' primType='"TRIANGLESTRIP" "TRIANGLES"' position='1210.45288086 661.573913574 512.851257324' size='2346.39428711 1092.53186035 638.462524414' index='bingeo_yamamayu_all_decimate2/BG_0_indexBinary.bin' coord='bingeo_yamamayu_all_decimate2/BG_0_coordBinary.bin+8' normal='bingeo_yamamayu_all_decimate2/BG_0_normalBinary.bin+4' color='bingeo_yamamayu_all_decimate2/BG_0_colorBinary.bin+4' coordType='Int16' normalType='Int8' colorType='Uint8'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+    <Transform DEF='Lamp_TRANSFORM' rotation='-0.498084 -0.762016 -0.413815 1.51388' translation='-4.07624 5.90386 1.00545'>
+      <PointLight DEF='LA_Lamp' intensity='0.5714' radius='30'/>
+    </Transform>
+    <Transform DEF='Label_TRANSFORM' scale='0.01 0.01 0.01' translation='-12 -5 -5'>
+      <Transform DEF='Label_ifs_TRANSFORM' translation='-7.8e-005 9e-006 -5.3e-005'>
+        <Group DEF='group_ME_Shape_IndexedFaceSet_001'>
+          <Shape DEF='SP_1'>
+            <Appearance>
+              <Material DEF='MA_Shape_001' ambientIntensity='0' diffuseColor='1 1 1' shininess='0.779'/>
+            </Appearance>
+            <BinaryGeometry DEF='BG_1' vertexCount='56356 5109' primType='"TRIANGLESTRIP" "TRIANGLES"' position='1183.10864258 503.77053833 392.303497314' size='2366.2434082 1007.56707764 784.631896973' index='bingeo_yamamayu_all_decimate2/BG_1_indexBinary.bin' coord='bingeo_yamamayu_all_decimate2/BG_1_coordBinary.bin+8' normal='bingeo_yamamayu_all_decimate2/BG_1_normalBinary.bin+4' color='bingeo_yamamayu_all_decimate2/BG_1_colorBinary.bin+4' coordType='Int16' normalType='Int8' colorType='Uint8'/>
+          </Shape>
+        </Group>
+      </Transform>
+    </Transform>
+  </Scene>
+</X3D>
