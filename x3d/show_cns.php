@@ -24,16 +24,6 @@ if (isset($_GET['name'])) {
 <?php require(INC_BASE. "/menu.php"); ?>
 
 <div class="container">
-    <div class="dropdown">
-        <button class="btn btn-info dropdown-toggle" type="button" id="dropdownMenu1" data-toggle="dropdown"
-                aria-haspopup="true" aria-expanded="true">
-            Choose Model
-            <span class="caret"></span>
-        </button>
-        <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
-            <li><a href="./show_x3d.php?name=standardbrain_decimate">Standard Brain Decimated</a></li>
-        </ul>
-    </div>
     <div class="panel panel-primary">
         <div class="panel-heading">
             3D Viewer [<?php echo $filename ?>]
@@ -44,7 +34,7 @@ if (isset($_GET['name'])) {
                 <scene id="x3d_scene">
                     <navigationInfo id="head" headlight='true' type='"EXAMINE"'>  </navigationInfo>
                     <viewpoint position="0.0 0.0 13.0" orientation="0.0 0.0 0.0"></viewpoint>
-                    <Inline nameSpaceName="SB" mapDEFToID="true" url="<?php echo $filename ?>"></Inline>
+                    <Inline nameSpaceName="INLINE" mapDEFToID="true" url="<?php echo $uri_prefix . $filename ?>"></Inline>
                 </scene>
             </x3d>
         </div>
