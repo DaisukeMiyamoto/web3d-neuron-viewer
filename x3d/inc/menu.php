@@ -26,6 +26,7 @@
                 <li <?php if(PAGE_NO==2) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/invbrain.php">Invertebrate Brains</a></li>
                 <li <?php if(PAGE_NO==3) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_x3d.php">x3d files</a></li>
                 <li <?php if(PAGE_NO==4) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_volume.php">Volume files</a></li>
+                <li <?php if(PAGE_NO==5) echo "class=\"active\"" ?>><a href="<?php echo URL_BASE ?>/show_cns.php">Database</a></li>
             </ul>
         </div><!--/.nav-collapse -->
     </div>

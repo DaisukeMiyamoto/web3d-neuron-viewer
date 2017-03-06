@@ -26,6 +26,7 @@ define("PAGE_NO", 0);
     <a class="btn btn-primary btn-lg btn-block" href="./invbrain.php">Invertebrate Brain Viewer</a>
     <a class="btn btn-primary btn-lg btn-block" href="./show_x3d.php">General x3d File Viewer</a>
     <a class="btn btn-primary btn-lg btn-block" href="./show_volume.php">Volume and Slice Image Viewer</a>
+    <a class="btn btn-primary btn-lg btn-block" href="./show_cns.php">3D Viewer from Database</a>
 </div>
 
 </body>
