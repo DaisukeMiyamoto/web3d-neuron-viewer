@@ -80,4 +80,5 @@ if (isset($_GET['fullscreen'])) {
 ?>
 
 </body>
+<?php require(INC_BASE . "/last_inc.php"); ?>
 </html>
