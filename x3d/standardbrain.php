@@ -93,53 +93,34 @@ $neuron_list = array(
                 </div>
             </div>
         </div>
-        <div class="panel-footer">
-            <div class="container-fluid">
-                <div class="row">
-                    <ul class="list-group">
-                        <li class="list-group-item col-6">
-                            <label>Standard Brain Transparency (experimental)</label>
-                            <div id="transSlider" class="slider"/>
-                        </li>
-                    </ul>
-                </div>
-            </div>
-        </div>
         <div class="panel-footer" id="log">
         </div>
     </div>
 </div>
-
+</body>
+<?php require(INC_BASE . "/last_inc.php"); ?>
 <script type="text/javascript">
     $(document).ready(function () {
-        $(".slider").slider({
-            min: 0, max: 1, step: 0.1, slide: function(e, ui) {
-                var newTrans = $("#transSlider").slider('option', 'value');
-                $("#inline_SB__MA_Material").attr("transparency", newTrans);
+        $('.cb_inline').click(function () {
+            if ($(this).is(":checked")) {
+                $('#log').append('Append: ' + this.id + '<br />\n');
+                $('#x3d_scene').append('<Inline id="inline_' + this.id + '" nameSpaceName="' + this.id + '" mapDEFToID="true" url="data/' + this.id + '_regist_aopt.x3d" />');
+            } else {
+                $('#log').append('Remove: ' + this.id + '<br />\n');
+                $('#inline_' + this.id).remove();
             }
         });
-    });
 
-    $('.cb_inline').click(function () {
-        if ($(this).is(":checked")) {
-            $('#log').append('Append: ' + this.id + '<br />\n');
-            $('#x3d_scene').append('<Inline id="inline_' + this.id + '" nameSpaceName="' + this.id + '" mapDEFToID="true" url="data/' + this.id + '_regist_aopt.x3d" />');
-        } else {
-            $('#log').append('Remove: ' + this.id + '<br />\n');
-            $('#inline_' + this.id).remove();
-        }
-    });
+        $('#cb_coloring').click(function () {
+            $('#inline_SB').remove();
+            if ($(this).is(":checked")) {
+                $('#x3d_scene').append('<Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="data/standardbrain_aopt.x3d" />');
+            } else {
+                $('#x3d_scene').append('<Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="data/standardbrain_decimate_trans_aopt.x3d" />');
+            }
+        });
 
-    $('#cb_coloring').click(function () {
-        $('#inline_SB').remove();
-        if ($(this).is(":checked")) {
-            $('#x3d_scene').append('<Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="data/standardbrain_aopt.x3d" />');
-        } else {
-            $('#x3d_scene').append('<Inline id="inline_SB" nameSpaceName="inline_SB" mapDEFToID="true" url="data/standardbrain_decimate_trans_aopt.x3d" />');
-        }
     });
 
 </script>
-
-</body>
 </html>

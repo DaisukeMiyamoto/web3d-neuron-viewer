@@ -98,5 +98,8 @@ if (isset($_GET['name'])) {
         </div>
     </div>
 </div>
+<?php require(INC_BASE . "/last_inc.php"); ?>
+<script type='text/javascript' src='https://www.x3dom.org/release/components/VolumeRendering.js'></script>
 </body>
 </html>
+

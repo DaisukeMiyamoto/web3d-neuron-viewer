@@ -10,26 +10,22 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>CNS-PF 3D Viewer</title>
+
 <!-- x3d -->
-<script type='text/javascript' src='https://www.x3dom.org/release/x3dom.js'></script>
-<script type='text/javascript' src='https://www.x3dom.org/release/components/VolumeRendering.js'></script>
 <link rel='stylesheet' type='text/css' href='https://www.x3dom.org/release/x3dom.css'/>
 
-<!-- jquery -->
-<script src="<?php echo URL_BASE; ?>/lib/jquery-3.1.1.min.js"></script>
-<!--<link href="--><?php //echo URL_BASE; ?><!--/lib/jquery-ui.css" rel="stylesheet">-->
-<!--<script src="--><?php //echo URL_BASE; ?><!--/lib/jquery-ui.min.js"></script>-->
-
 <!-- Bootstrap -->
-<link href="<?php echo URL_BASE; ?>/lib/bootstrap.min.css" rel="stylesheet">
-<script src="<?php echo URL_BASE; ?>/lib/bootstrap.min.js"></script>
+<link href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">
 
 <!-- Bootstrap extensions -->
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap2/bootstrap-switch.min.css" />-->
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/lib/switch.css'/>
-<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/bootstrap-slider.min.js"></script>
-<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css" />
+<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css" />-->
 
 <!-- mycss -->
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/my.css'/>
+
 <?php require(INC_BASE . "/common.php"); ?>
 
+<!-- jquery -->
+<script src="https://code.jquery.com/jquery-3.1.1.slim.min.js" integrity="sha384-A7FZj7v+d/sdmMqp/nOQwliLvUsJfDHW+k9Omg/a/EheAdgtzNs3hpfag6Ed950n" crossorigin="anonymous"></script>

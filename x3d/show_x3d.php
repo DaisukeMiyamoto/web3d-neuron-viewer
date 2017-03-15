@@ -96,4 +96,5 @@ if (isset($_GET['name'])) {
 </div>
 
 </body>
+<?php require(INC_BASE . "/last_inc.php"); ?>
 </html>

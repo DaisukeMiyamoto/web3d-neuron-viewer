@@ -30,4 +30,5 @@ define("PAGE_NO", 0);
 </div>
 
 </body>
+<?php require(INC_BASE . "/last_inc.php"); ?>
 </html>
