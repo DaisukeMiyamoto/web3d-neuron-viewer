@@ -15,7 +15,7 @@ define("SHOW_LOG", "false");
 if (isset($_GET['name'])) {
     $filename = DATA_DIR . "/" . htmlentities($_GET['name'], ENT_QUOTES) . "_decimate2_aopt.x3d";
 } else {
-    $filename = DATA_DIR . "/" . "yamamayu_all_decimate.x3d";
+    $filename = DATA_DIR . "/" . "yamamayuga_labels_decimate2_aopt.x3d";
 }
 ?>
 
@@ -34,9 +34,9 @@ if (isset($_GET['name'])) {
         <ul class="dropdown-menu" aria-labelledby="dropdownMenu1">
             <li><a href="./invbrain.php?name=nagatama_labels">Nagatama</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./invbrain.php?name=suziguro">Suziguro</a></li>
+            <li><a href="./invbrain.php?name=suziguro_labels">Suziguro</a></li>
             <li role="separator" class="divider"></li>
-            <li><a href="./invbrain.php?name=yamamayu_all">Yamamayuga</a></li>
+            <li><a href="./invbrain.php?name=yamamayuga_labels">Yamamayuga</a></li>
         </ul>
     </div>
     <div class="panel panel-primary">

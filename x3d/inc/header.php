@@ -20,7 +20,7 @@
 <!-- Bootstrap extensions -->
 <!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-switch/3.3.4/css/bootstrap2/bootstrap-switch.min.css" />-->
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/lib/switch.css'/>
-<!--<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css" />-->
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap-slider/9.7.2/css/bootstrap-slider.min.css" />
 
 <!-- mycss -->
 <link rel='stylesheet' type='text/css' href='<?php echo URL_BASE; ?>/my.css'/>

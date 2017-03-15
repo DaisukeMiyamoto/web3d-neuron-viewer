@@ -35,32 +35,26 @@ if (isset($_GET['name'])) {
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=nagatama_labels_decimate1">Nagatama Labels Decimated1</a></li>
             <li><a href="./show_x3d.php?name=nagatama_labels_decimate2">Nagatama Labels Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=nagatama_labels_decimate1_aopt">Nagatama Labels Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=nagatama_labels_decimate2_aopt">Nagatama Labels Decimated2 AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=nagatama_outline_decimate1">Nagatama Outline Decimated1</a></li>
             <li><a href="./show_x3d.php?name=nagatama_outline_decimate2">Nagatama Outline Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=nagatama_outline_decimate1_aopt">Nagatama Outline Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=nagatama_outline_decimate2_aopt">Nagatama Outline Decimated2 AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=suziguro_labels_decimate1">suziguro Labels Decimated1</a></li>
             <li><a href="./show_x3d.php?name=suziguro_labels_decimate2">suziguro Labels Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=suziguro_labels_decimate1_aopt">suziguro Labels Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=suziguro_labels_decimate2_aopt">suziguro Labels Decimated2 AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=suziguro_outline_decimate1">suziguro Outline Decimated1</a></li>
             <li><a href="./show_x3d.php?name=suziguro_outline_decimate2">suziguro Outline Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=suziguro_outline_decimate1_aopt">suziguro Outline Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=suziguro_outline_decimate2_aopt">suziguro Outline Decimated2 AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=yamamayuga_labels_decimate1">yamamayuga Labels Decimated1</a></li>
             <li><a href="./show_x3d.php?name=yamamayuga_labels_decimate2">yamamayuga Labels Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=yamamayuga_labels_decimate1_aopt">yamamayuga Labels Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=yamamayuga_labels_decimate2_aopt">yamamayuga Labels Decimated2 AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate1">yamamayuga Outline Decimated1</a></li>
             <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate2">yamamayuga Outline Decimated2</a></li>
-            <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate1_aopt">yamamayuga Outline Decimated1 AOPT</a></li>
             <li><a href="./show_x3d.php?name=yamamayuga_outline_decimate2_aopt">yamamayuga Outline Decimated2 AOPT</a></li>
             <li role="separator" class="divider"></li>
             <li><a href="./show_x3d.php?name=maeso">Maeso</a></li>
