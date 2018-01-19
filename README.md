@@ -1,4 +1,4 @@
-# test_x3dom
+# Web3D neuron viewer
 ![license](https://img.shields.io/badge/license-apache-blue.svg)
 ![WebGL:x3dom](https://img.shields.io/badge/WebGL-x3dom-green.svg)
 
